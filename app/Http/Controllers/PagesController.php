@@ -20,6 +20,8 @@ class PagesController extends Controller
     }
 
     public function cari() {
-        return view('pages.properties');
+        return view('pages.properties', [
+            'parallaxTitle' => 'Cari Properti'
+        ]);
     }
 }

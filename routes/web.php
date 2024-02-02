@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PropertiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,11 +35,13 @@ Route::middleware(['guest'])->group(function () {
     
     Route::get('/tentang-kami', [PagesController::class, 'tentangKami'])->name('tentang.kami');
     
-    Route::get('/cari', [PagesController::class, 'cari'])->name('cari.properti');
+    Route::get('/cari', [PagesController::class, 'cari'])->name('cari.properti'); 
     
     // Route Agen
     Route::get('/cari-agen', [AgentController::class, 'index'])->name('cari.agen'); 
     Route::get('/jual-properti-online', [AgentController::class, 'jualProperti'])->name('jual.properti');
     Route::get('/explore', [AgentController::class, 'explore'])->name('explore');
-    Route::resource('posts', PostController::class);
-});
+    Route::get('/single-listing', [AgentController::class, 'singleListing'])->name('single.listing'); 
+    Route::resource('posts', PostController::class); 
+    Route::resource('properties', PropertiController::Class);
+}); 

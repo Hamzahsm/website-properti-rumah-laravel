@@ -21,10 +21,10 @@
 </head>
 
 <body>
-    <div class="super_container">
+    <div class="super_container"> 
         @include('properties.header')
         @include('partials.modals')
-        @yield('properti-container') 
+        @yield('content') 
         @include('properties.footer')
     </div>
 

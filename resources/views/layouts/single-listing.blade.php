@@ -19,7 +19,11 @@
 <body>
 
 <div class="super_container">
-    @yield('content')
+    @include('single-listing.header')
+    @include('single-listing.parallax')
+    @include('partials.modals')
+    @yield('content') 
+    @include('single-listing.footer')
 </div>
 
 <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>

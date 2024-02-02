@@ -1,5 +1,5 @@
 @extends('layouts.properti')
-@section('properti-container')
+@section('content')
     <div class="jual_properti">
         <div class="container">
             <h2 class="text-center text-dark">Iklankan Properti Mudah</h2>

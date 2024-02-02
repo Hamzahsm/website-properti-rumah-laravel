@@ -1,5 +1,5 @@
 @extends('layouts.properti')
-@section('properti-container')
+@section('content')
 	<!-- Offers -->
 
 	<div class="offers">

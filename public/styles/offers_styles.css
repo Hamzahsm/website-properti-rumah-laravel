@@ -448,7 +448,7 @@ section
 	line-height: 36px;
 	font-weight: 600;
 	color: #FFFFFF;
-	text-transform: uppercase;
+	text-transform: uppercase; 
 }
 .user_box_link a:hover
 {
@@ -1508,7 +1508,7 @@ section
 }
 .book_button
 {
-	background: #31124b;
+	background: #099621;
 	margin-top: 39px;
 	margin-bottom: -5px;
 	-webkit-transition: all 200ms ease;
@@ -1517,10 +1517,7 @@ section
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
-.book_button:hover
-{
-	opacity: 0.8;
-}
+
 .offer_reviews
 {
 	position: absolute;
@@ -1575,7 +1572,7 @@ section
 	width: 100%;
 	padding-top: 113px;
 	padding-bottom: 104px;
-	background: #0d66ff;
+	background: linear-gradient(to right, #0d66ff, #0ec9e6);
 }
 .footer_title
 {

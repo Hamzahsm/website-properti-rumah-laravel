@@ -24,4 +24,10 @@ class AgentController extends Controller
             'parallaxTitle' => 'Explore'
         ]); 
     }
+
+    public function singleListing() {
+        return view('agents.single-listing', [
+            'parallaxTitle' => 'Daftar Properti'
+        ]);
+    }
 }

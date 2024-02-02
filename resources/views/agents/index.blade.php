@@ -1,5 +1,5 @@
 @extends('layouts.properti')
-@section('properti-container')
+@section('content') 
 <div class="intro">
     <div class="container">
         <form class="#" method="get">
