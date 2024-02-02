@@ -9,18 +9,16 @@
                     <div class="phone"><a href="#" class="text-white"><i class="fa fa-phone" aria-hidden="true"></i> (0341) xxxxxxx</a></div>
                     <div class="social">
                         <ul class="social_list">
-                            <li class="social_list_item"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            <li class="social_list_item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                             <li class="social_list_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li class="social_list_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li class="social_list_item"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                            <li class="social_list_item"><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-                            <li class="social_list_item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li class="social_list_item"><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <div class="user_box ml-auto">
                         <div class="user_box_login user_box_link"><a href="{{ route('cari.agen') }}">Cari Agen</a></div>
                         <div class="user_box_register user_box_link"><a href="{{ route('explore') }}">Explore</div>
-                        <div class="user_box_register user_box_link"><a href="{{ route('jual.properti') }}"> | mulai iklan properti</a></div> 
+                        <div class="user_box_register user_box_link"><a href="{{ route('jual.properti') }}"> | Mulai iklan properti</a></div> 
+                        <div class="user_box_register user_box_link"><a href="{{ route('posts.index') }}"> | Berita</a></div> 
                     </div> 
                 </div>
             </div>

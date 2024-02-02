@@ -2,9 +2,18 @@
 @section('properti-container')
 <div class="intro">
     <div class="container">
-        <form action="#" method="get" >
-            <input type="text" class="form-control shadow" placeholder="Nama Agent, Lokasi Agent">
-        </form>
+        <form class="#" method="get">
+            @csrf
+            <div class="form-row align-items-center">
+              <div class="col-lg-6">
+                <label class="sr-only" for="inlineFormInput">Name</label>
+                <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Masukkan Nama Agen">
+              </div>
+              <div class="col-lg-2">
+                <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i> Cari</button>
+              </div>
+            </div>
+          </form>
     </div>
 
     <div class="container mt-5">

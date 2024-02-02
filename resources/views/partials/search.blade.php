@@ -44,7 +44,7 @@
 				<div>adults</div>
 				<select name="adults" id="adults_1" class="dropdown_item_select search_input">
 					<option>01</option>
-					<option>02</option>
+					<option>02</option> 
 					<option>03</option>
 				</select>
 			</div>

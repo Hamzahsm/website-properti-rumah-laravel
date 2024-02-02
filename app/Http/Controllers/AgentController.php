@@ -8,13 +8,15 @@ class AgentController extends Controller
 {
     // 
     public function index() {
-        return view('agents.index'); 
+        return view('agents.index', [
+            'parallaxTitle' => 'Cari Agen'
+        ]); 
     }
 
     public function jualProperti() {
         return view('agents.jual-properti', [
             'parallaxTitle' => 'Iklankan Properti'
-        ]);
+        ]); 
     }
 
     public function explore() {

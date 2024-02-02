@@ -15,8 +15,11 @@
 
 <body>
 
-<div class="super_container">
+<div class="super_container"> 
+    @include('blogs.header')
+    @include('blogs.parallax')
     @yield('content')
+    @include('blogs.footer')
 </div>
 
 <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
@@ -24,7 +27,7 @@
 <script src="{{ asset('styles/bootstrap4/bootstrap.min.js') }}"></script>
 <script src="{{ asset('plugins/colorbox/jquery.colorbox-min.js') }}"></script>
 <script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}"></script>
-<script src="{{ asset('js/blog_custom.js') }}"></script>
+<script src="{{ asset('js/blog_custom.js') }}"></script> 
 
 </body>
 

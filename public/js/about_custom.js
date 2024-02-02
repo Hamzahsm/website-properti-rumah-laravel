@@ -46,6 +46,8 @@ $(document).ready(function()
 	initStats();
 	initMilestones();
 	initSearchForm();
+	initKotaPilihan();
+	initModelHunian();
 
 	/* 
 
@@ -299,7 +301,82 @@ $(document).ready(function()
 					searchForm.removeClass('active');
 					searchActive = false;
 				}
-			});	
+			});	 
 		}
 	}
+
+		/*
+
+	9. Init Kota Pilihan Slider
+
+	*/
+	function initKotaPilihan() 
+	{
+		if($('.kota_pilihan').length)
+		{
+			var kotaPilihan = $('.kota_pilihan'); 
+
+			kotaPilihan.owlCarousel(
+			{ 
+				loop:true,
+				items:1,
+				autoplay: true,
+				autoplayTimeout:1000,
+				autoplayHoverPause:true,
+				nav:false,
+				dots:true,
+				// smartSpeed:200,
+				margin:30,
+				responsive:{
+					0:{
+						items:1
+					},
+					600:{
+						items:2
+					},
+					1000:{
+						items:3
+					}
+				}
+			});
+		}
+	}
+
+		/*
+
+	9. Init Kota Pilihan Slider
+
+	*/
+	function initModelHunian() 
+	{
+		if($('.ragam_model_hunian').length)
+		{
+			var modelHunian = $('.ragam_model_hunian'); 
+
+			modelHunian.owlCarousel(
+			{ 
+				loop:true,
+				items:1,
+				autoplay: true,
+				autoplayTimeout:1000,
+				autoplayHoverPause:true,
+				nav:false,
+				dots:true,
+				// smartSpeed:200,
+				margin:30,
+				responsive:{
+					0:{
+						items:1
+					},
+					600:{
+						items:2
+					},
+					1000:{
+						items:3
+					}
+				}
+			});
+		}
+	}
+
 });
