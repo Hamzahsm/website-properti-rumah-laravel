@@ -17,8 +17,20 @@
                     <div class="user_box ml-auto">
                         <div class="user_box_login user_box_link"><a href="{{ route('cari.agen') }}">Cari Agen</a></div>
                         <div class="user_box_register user_box_link"><a href="{{ route('explore') }}">Explore</div>
-                        <div class="user_box_register user_box_link"><a href="{{ route('jual.properti') }}"> | Mulai iklan properti</a></div> 
-                        <div class="user_box_register user_box_link"><a href="{{ route('posts.index') }}"> | Berita</a></div> 
+                        <div class="user_box_register user_box_link"><a href="{{ route('jual.properti') }}" >Mulai iklan properti</a></div> 
+                        <div class="user_box_register user_box_link"><a href="{{ route('posts.index') }}" >Berita</a></div> 
+                        <div class="user_box_register user_box_dropdown" >
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                Perusahaan
+                                </a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item hover-menu" href="#">Tentang</a>
+                                  <a class="dropdown-item hover-menu" href="#">Event</a>
+                                  <a class="dropdown-item hover-menu" href="#">Pressroom</a>
+                                </div>
+                            </div>
+                        </div> 
                     </div> 
                 </div>
             </div>
@@ -63,7 +75,6 @@
 <div class="menu trans_500">
     <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
         <div class="menu_close_container"><div class="menu_close"></div></div>
-        {{-- <div class="logo menu_logo"><a href="#"><img src="images/logo.png" alt=""></a></div> --}}
         <ul>
             <li class="menu_item"><a href="#">Dijual</a></li>
             <li class="menu_item"><a href="#">Disewa</a></li>
@@ -74,4 +85,4 @@
     </div>
 </div>
 
-<!-- Home -->
+<!-- Home -->  

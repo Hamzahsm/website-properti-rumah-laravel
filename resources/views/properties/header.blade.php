@@ -17,10 +17,22 @@
 							</ul>
 						</div>
 						<div class="user_box ml-auto">
-							<div class="user_box_login user_box_link"><a href="{{ route('login') }}">Login</a></div>
+							<div class="user_box_login user_box_link"><a href="{{ route('login') }}">Cari Agen</a></div>
 							<div class="user_box_register user_box_link"><a href="{{ route('explore') }}"> Explore</a></div>
-							<div class="user_box_register user_box_link"><a href="{{ route('jual.properti') }}"> | Mulai iklan properti</a></div>
-							<div class="user_box_register user_box_link"><a href="{{ route('posts.index') }}"> | Berita</a></div>
+							<div class="user_box_register user_box_link"><a href="{{ route('jual.properti') }}">Mulai iklan properti</a></div>
+							<div class="user_box_register user_box_link"><a href="{{ route('posts.index') }}">Berita</a></div>
+							<div class="user_box_register user_box_dropdown" > 
+								<div class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+									Perusahaan
+									</a>
+									<div class="dropdown-menu">
+									  <a class="dropdown-item hover-menu" href="#">Tentang</a>
+									  <a class="dropdown-item hover-menu" href="#">Event</a>
+									  <a class="dropdown-item hover-menu" href="#">Pressroom</a>
+									</div>
+								</div>
+							</div> 
 						</div>
 					</div>
 				</div>
