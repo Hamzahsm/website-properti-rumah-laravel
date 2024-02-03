@@ -5,6 +5,9 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PropertiController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +29,9 @@ Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('products', ProductController::class);
 });
 
 Route::middleware(['guest'])->group(function () {
