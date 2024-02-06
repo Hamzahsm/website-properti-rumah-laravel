@@ -64,6 +64,24 @@
         </ul>
       </li><!-- End produk Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#iklan_properti" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Iklan Properti</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="iklan_properti" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('properties.index') }}">
+              <i class="bi bi-circle"></i><span>Semua Iklan</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('properties.create') }}">
+              <i class="bi bi-circle"></i><span>Tambah Iklan Baru</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End produk Nav -->
+
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">

@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
+    Route::resource('properties', PropertiController::Class);
 });
 
 Route::middleware(['guest'])->group(function () {
@@ -49,5 +50,5 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/explore', [AgentController::class, 'explore'])->name('explore');
     Route::get('/single-listing', [AgentController::class, 'singleListing'])->name('single.listing'); 
     Route::resource('posts', PostController::class); 
-    Route::resource('properties', PropertiController::Class);
+    // Route::resource('properties', PropertiController::Class);
 }); 
