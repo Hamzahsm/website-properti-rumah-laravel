@@ -7,7 +7,7 @@
                 <h2>Create New user</h2>
             </div>
             <div class="pull-right mb-3">
-                <a href="{{ route('users.index') }}" class="btn btn-primary">Back</a>
+                <a href="{{ route('users.index') }}" class="btn btn-primary">Back</a> 
             </div>
         </div>
     </div>

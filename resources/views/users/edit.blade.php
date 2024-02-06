@@ -8,9 +8,11 @@
             </div>
             <div class="pull-right mb-3">
                 <a href="{{ route('users.index') }}" class="btn btn-primary">Back</a>
-            </div>
+            </div> 
         </div>
     </div>
+
+    <!-- take a break for 2 minute -->
 
     @if (count($errors) > 0)
         <div class="alert alert-danger">

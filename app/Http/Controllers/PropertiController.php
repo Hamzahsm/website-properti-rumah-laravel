@@ -14,7 +14,7 @@ class PropertiController extends Controller
         //
         return view('properties.index', [
             'parallaxTitle' => 'Properti Dijual'
-        ]);
+        ]); 
     }
 
     /**
