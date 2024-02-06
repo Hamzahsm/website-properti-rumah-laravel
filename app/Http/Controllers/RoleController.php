@@ -10,7 +10,7 @@ use Spatie\Permission\Models\Permission;
 use DB;
     
 class RoleController extends Controller
-{
+{ 
     /**
      * Display a listing of the resource.
      *
@@ -32,7 +32,7 @@ class RoleController extends Controller
     public function index(Request $request)
     {
         $roles = Role::orderBy('id','DESC')->paginate(5);
-        return view('roles.index',compact('roles'))
+        return view('dashboard.manage-role-index',compact('roles'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
     
@@ -44,7 +44,7 @@ class RoleController extends Controller
     public function create()
     {
         $permission = Permission::get();
-        return view('roles.create',compact('permission'));
+        return view('dashboard.manage-role-create',compact('permission'));
     }
     
     /**
@@ -79,7 +79,7 @@ class RoleController extends Controller
             ->where("role_has_permissions.role_id",$id)
             ->get();
     
-        return view('roles.show',compact('role','rolePermissions'));
+        return view('dashboard.manage-role-show',compact('role','rolePermissions')); 
     }
     
     /**
@@ -96,7 +96,7 @@ class RoleController extends Controller
             ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
             ->all();
     
-        return view('roles.edit',compact('role','permission','rolePermissions'));
+        return view('dashboard.manage-role-edit',compact('role','permission','rolePermissions'));
     }
     
     /**
@@ -117,7 +117,7 @@ class RoleController extends Controller
         $role->name = $request->input('name');
         $role->save();
     
-        $role->syncPermissions($request->input('permission'));
+        $role->syncPermissions($request->input('permission')); 
     
         return redirect()->route('roles.index')
                         ->with('success','Role updated successfully');
