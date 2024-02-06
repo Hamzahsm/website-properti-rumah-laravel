@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
     
 use App\Models\Product;
 use Illuminate\Http\Request;
+use DB;
     
 class ProductController extends Controller
 { 
@@ -27,7 +28,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::latest()->paginate(5);
-        return view('products.index',compact('products'))
+        return view('dashboard.manage-product-index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
@@ -38,7 +39,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('dashboard.manage-product-create');
     }
     
     /**
@@ -68,7 +69,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show',compact('product'));
+        return view('dashboard.manage-product-show',compact('product'));
     }
     
     /**
@@ -79,8 +80,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit',compact('product'));
-    }
+        return view('dashboard.manage-product-edit',compact('product'));
+    } 
     
     /**
      * Update the specified resource in storage.
@@ -108,11 +109,14 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        $product->delete();
+        // $product->delete();
     
+        // return redirect()->route('products.index')
+        //                 ->with('success','Product deleted successfully'); 
+        DB::table("products")->where('id',$id)->delete();
         return redirect()->route('products.index')
-                        ->with('success','Product deleted successfully');
+                        ->with('success','Role deleted successfully');
     }
 }
