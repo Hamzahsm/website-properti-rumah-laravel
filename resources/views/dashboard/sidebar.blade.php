@@ -75,7 +75,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('properties.create') }}">
+            <a href="{{ route('properties.create') }}"> 
               <i class="bi bi-circle"></i><span>Tambah Iklan Baru</span>
             </a>
           </li>

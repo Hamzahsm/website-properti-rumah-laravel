@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\IklanProperti\StoreRequest;
+use App\Http\Requests\IklanProperti\UpdateRequest;
 use App\Models\IklanProperti;
 
 class PropertiController extends Controller
@@ -16,9 +17,14 @@ class PropertiController extends Controller
     public function index()
     {
         //
-        return view('properties.index', [
-            'parallaxTitle' => 'Properti Dijual'
-        ]);  
+        // return view('properties.index', [
+        //     'parallaxTitle' => 'Properti Dijual'
+        // ]);   
+
+        $ads = IklanProperti::all();
+        return view('dashboard.manage-iklan-properti-index', compact('ads'));
+
+
     }
 
     /**
@@ -55,9 +61,7 @@ class PropertiController extends Controller
         $create = IklanProperti::create($validated);
 
         if($create) {
-            //add flash for nification
-            // session()->flash('notif.success', 'Properti Berhasil Ditambahkan!');
-            return redirect()->route('home');
+            return redirect()->route('properties.index')->with('success', 'Iklan Properti Berhasil Ditambahkan!');
         }
 
         return abort(500);
@@ -69,6 +73,8 @@ class PropertiController extends Controller
     public function show(string $id)
     {
         //
+        $ads = IklanProperti::findOrFail($id);
+        return view('dashboard.manage-iklan-properti-show', compact('ads'));
     }
 
     /**
@@ -77,14 +83,43 @@ class PropertiController extends Controller
     public function edit(string $id)
     {
         //
+        $ads = IklanProperti::find($id);
+        return view('dashboard.manage-iklan-properti-edit', compact('ads'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateRequest $request, string $id)
     {
         //
+        $ads = IklanProperti::findOrFail($id);
+        $validated = $request->validated();
+
+        if($request->hasFile('featured_image')) {
+            //delete image
+            Storage::disk('public')->delete($post->featured_image);
+
+            $filePath = Storage::disk('public')->put('images/iklan-properties/featured-images', request()->file('featured_image'));
+            $validated['featured_image'] = $filePath;
+        }
+
+        if($request->hasFile('foto_perusahaan_properti')) {
+            //delete image
+            Storage::disk('public')->delete($post->foto_perusahaan_properti);
+
+            $filePath = Storage::disk('public')->put('images/iklan-properties/featured-images', request()->file('foto_perusahaan_properti'));
+            $validated['foto_perusahaan_properti'] = $filePath;
+        }
+
+        $update = $ads->update($validated);
+
+        if($update) {
+            return redirect()->route('properties.index')->with('success', 'Iklan Berhasil di Update !');
+        }
+
+        return 500;
+
     }
 
     /**
@@ -93,5 +128,14 @@ class PropertiController extends Controller
     public function destroy(string $id)
     {
         //
+        $ads = IklanProperti::findOrFail($id);
+        //also delete the image 
+        Storage::disk('public')->delete($ads->featured_image);
+        Storage::disk('public')->delete($ads->foto_perusahaan_properti);
+        $delete = $ads->delete($id);
+
+        if($delete) {
+            return redirect()->route('properties.index')->with('success', 'Iklan Properti Berhasil di Hapus');
+        }
     }
 }

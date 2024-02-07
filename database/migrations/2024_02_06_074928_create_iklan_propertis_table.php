@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('agent_id')->nullable();
             $table->string('judul_properti');
             $table->string('slug')->unique();
-            $table->string('nomor_telepon_properti')->unique();
+            $table->string('nomor_telepon_properti')->unique(); 
             $table->string('lokasi_properti');
             $table->string('provinsi_properti');
             $table->string('luas_bangunan_properti');
