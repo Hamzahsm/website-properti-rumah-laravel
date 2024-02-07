@@ -80,7 +80,25 @@
             </a>
           </li>
         </ul>
-      </li><!-- End produk Nav -->
+      </li><!-- End iklan properti Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#iklan_premium" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Iklan Premium</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="iklan_premium" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('ads.index') }}">
+              <i class="bi bi-circle"></i><span>Semua Iklan</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('ads.create') }}"> 
+              <i class="bi bi-circle"></i><span>Tambah Iklan Baru</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End iklan properti Nav -->
 
       <li class="nav-heading">Pages</li>
 

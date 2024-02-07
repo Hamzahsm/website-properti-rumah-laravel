@@ -8,6 +8,7 @@ use App\Http\Controllers\PropertiController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController; 
+use App\Http\Controllers\IklanPremiumController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,7 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
     Route::resource('properties', PropertiController::Class);
+    Route::resource('ads', IklanPremiumController::class);
 });
 
 Route::middleware(['guest'])->group(function () {
