@@ -22,7 +22,15 @@ class PermissionTableSeeder extends Seeder
             'product-list',
             'product-create',
             'product-edit',
-            'product-delete'
+            'product-delete',
+            'iklan-properti-list',
+            'iklan-properti-create',
+            'iklan-properti-edit',
+            'iklan-properti-delete',
+            'iklan-premium-list',
+            'iklan-premium-create',
+            'iklan-premium-edit',
+            'iklan-premium-delete',
          ];
       
          foreach ($permissions as $permission) {

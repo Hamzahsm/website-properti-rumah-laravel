@@ -9,8 +9,21 @@ use App\Http\Requests\IklanProperti\StoreRequest;
 use App\Http\Requests\IklanProperti\UpdateRequest;
 use App\Models\IklanProperti;
 
-class PropertiController extends Controller
+class PropertiController extends Controller 
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    function __construct()
+    {
+         $this->middleware('permission:iklan-properti-list|iklan-properti-create|iklan-properti-edit|iklan-properti-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:iklan-properti-create', ['only' => ['create','store']]);
+         $this->middleware('permission:iklan-properti-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:iklan-properti-delete', ['only' => ['destroy']]);
+    } 
+
     /**
      * Display a listing of the resource.
      */

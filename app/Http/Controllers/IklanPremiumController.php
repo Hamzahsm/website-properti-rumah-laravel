@@ -12,6 +12,19 @@ class IklanPremiumController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    function __construct()
+    {
+         $this->middleware('permission:iklan-premium-list|iklan-premium-create|iklan-premium-edit|iklan-premium-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:iklan-premium-create', ['only' => ['create','store']]);
+         $this->middleware('permission:iklan-premium-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:iklan-premium-delete', ['only' => ['destroy']]);
+    } 
+
+    /**
+     * Display a listing of the resource.
      */
     public function index()
     {
