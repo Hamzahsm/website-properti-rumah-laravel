@@ -17,7 +17,7 @@
                     <div class="user_box ml-auto">
                         <div class="user_box_login user_box_link"><a href="{{ route('cari.agen') }}">Cari Agen</a></div>
                         <div class="user_box_register user_box_link"><a href="{{ route('explore') }}">Explore</div>
-                        <div class="user_box_register user_box_link"><a href="{{ route('jual.properti') }}" >Mulai iklan properti</a></div> 
+                        <div class="user_box_register user_box_link"><a href="{{ route('login') }}" >Mulai iklan properti</a></div> 
                         <div class="user_box_register user_box_link"><a href="{{ route('posts.index') }}" >Berita</a></div> 
                         <div class="user_box_register user_box_dropdown" >
                             <div class="nav-item dropdown">

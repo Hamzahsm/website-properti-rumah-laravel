@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\IklanProperti;
+use App\Models\IklanPremium;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('dashboard.index', compact('users'));
+        $ads = IklanProperti::all();
+        $premiums = IklanPremium::all();
+        return view('dashboard.index', compact('users', 'ads', 'premiums'));
     }
 }

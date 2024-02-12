@@ -18,7 +18,7 @@
 <!-- Modal agen properti-->
 <div class="modal fade" id="iklanAgen" tabindex="-1" aria-labelledby="iklanAgenModal" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content"> 
       <div class="modal-header">
         <h4 class="modal-title text-dark" id="iklanAgenModal">Lengkapi Formulir Registrasi</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -27,11 +27,22 @@
       </div>
       <div class="modal-body">
         <h5 class="text-center text-dark">Agent</h5>
-        <form action="#" method="post" class="text-dark">
+        <!-- Form Start here -->
+        <form action="{{ route('login.agen') }}" method="post" enctype="multipart/form-data">
           @csrf
           <div class="mb-3">
-            <label for="name" class="form-lable">Nama Lengkap</label>
-            <input type="text" class="form-control" name="name" id="name" required>
+            <label for="nama" class="form-lable">Nama Lengkap</label>
+            <input type="text" class="form-control" name="nama" id="nama" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-lable">Email</label>
+            <input type="email" class="form-control" name="email" id="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-lable">Password</label>
+            <input type="password" class="form-control" name="password" id="password" required>
           </div>
 
           <div class="mb-3">
@@ -44,8 +55,13 @@
             <input type="text" class="form-control" name="domisili" id="domisili" required>
           </div>
 
+          <div class="mb-3">
+            <label for="foto_profile" class="form-lable">Foto</label>
+            <input type="file" class="form-control" name="foto_profile" id="foto_profile" required>
+          </div>
+
           <div class="mb-3 text-center">
-            <button class="btn btn-primary">Daftar</button>
+            <button class="btn btn-primary" type="submit">Daftar</button>
           </div>
 
           <div class="mb-3">

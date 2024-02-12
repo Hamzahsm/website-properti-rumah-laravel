@@ -60,7 +60,7 @@
               </div>
 
               <div class="card-body">
-                <h5 class="card-title"> Iklan Properti <span>| Terbaru</span></h5>
+                <h5 class="card-title"> Total Iklan Properti <span>| Terbaru</span></h5>
 
                 <div class="d-flex align-items-center">
                   <a href="#">
@@ -69,7 +69,7 @@
                     </div>
                   </a>
                   <div class="ps-3">
-                    <h6>$3,264</h6>
+                    <h6>{{ $ads->count() }}</h6>
                   </div>
                 </div>
               </div>
@@ -77,7 +77,7 @@
             </div>
           </div>
 
-          <!-- Roles Card -->
+          <!-- Iklan Premium Card -->
           <div class="col-xxl-4 col-xl-12">
 
             <div class="card info-card customers-card">
@@ -96,18 +96,16 @@
               </div>
 
               <div class="card-body">
-                <h5 class="card-title">Roles <span>| Terbaru</span></h5>
+                <h5 class="card-title">Total Iklan Premium <span>| Terbaru</span></h5>
 
                 <div class="d-flex align-items-center">
-                  <a href="{{ route('roles.create') }}">
+                  <a href="{{ route('ads.create') }}">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-plus-circle-dotted"></i>
                     </div>
                   </a>
                   <div class="ps-3">
-                    <h6>1244</h6>
-                    <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
-
+                    <h6>{{ $premiums->count() }}</h6>
                   </div>
                 </div>
 
@@ -117,7 +115,7 @@
           </div>
 
           <!-- Jumlah User Aktif -->
-          <div class="col-12">
+          <div class="col-12"> 
             <div class="card">
 
               <div class="filter">
@@ -172,6 +170,108 @@
 
             </div>
           </div>
+
+          <!-- Jumlah Iklan Properti -->
+          <div class="col-12"> 
+            <div class="card">
+
+              <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                  </li>
+
+                  <li><a class="dropdown-item" href="#">Today</a></li>
+                  <li><a class="dropdown-item" href="#">This Month</a></li>
+                  <li><a class="dropdown-item" href="#">This Year</a></li>
+                </ul>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Tabel Iklan Properti <span>/Terbaru</span></h5>
+                <div class="table">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Foto</th>
+                        <th>Judul Properti</th>
+                        <th>Kontak</th>
+                        <th>Lokasi Properti</th>
+                        <th>Harga Properti</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($ads as $key)
+                      <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td><img src="{{ Storage::url($key->featured_image) }}" alt="" width="100" height="100"></td>
+                        <td><a href="{{ route('properties.show', $key->id) }}">{{ $key->judul_properti }}</a></td>
+                        <td>{{ $key->nomor_telepon_properti }}</td>
+                        <td>{{ $key->lokasi_properti }}</td>
+                        <td>{{ $key->harga_start_properti }} - {{ $key->harga_end_properti }}</td>
+                      </tr> 
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Jumlah Iklan Properti Premium -->
+          <div class="col-12"> 
+            <div class="card">
+
+              <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                  </li>
+
+                  <li><a class="dropdown-item" href="#">Today</a></li>
+                  <li><a class="dropdown-item" href="#">This Month</a></li>
+                  <li><a class="dropdown-item" href="#">This Year</a></li>
+                </ul>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Tabel Iklan Properti Premium <span>/Terbaru</span></h5>
+                <div class="table">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Foto</th>
+                        <th>Judul Properti</th>
+                        <th>Kontak</th>
+                        <th>Lokasi Properti</th>
+                        <th>Harga Properti</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($premiums as $ads)
+                      <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td><img src="{{ Storage::url($ads->featured_image) }}" alt="" width="100" height="100"></td>
+                        <td><a href="{{ route('ads.show', $ads->id) }}">{{ $ads->judul_properti }}</a></td>
+                        <td>{{ $ads->nomor_telepon_properti }}</td>
+                        <td>{{ $ads->lokasi_properti }}</td>
+                        <td>{{ $ads->harga_start_properti }} - {{ $ads->harga_end_properti }}</td>
+                      </tr> 
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+
+            </div>
+          </div> 
 
           <!-- Top Selling -->
           <div class="col-12">
