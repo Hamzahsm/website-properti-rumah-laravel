@@ -334,7 +334,8 @@
 							<!-- Title -->
 							<div class="hotel_title_container d-flex flex-lg-row flex-column">
 								<div class="hotel_title_content">
-									<h1 class="hotel_title">Grand Hotel Eurostar</h1>
+									<h1 class="hotel_title">{{ $ads->judul_properti }}</h1>
+									{{-- <h1 class="hotel_title">Grand Hotel Eurostar</h1> --}}
 									<div class="rating_r rating_r_4 hotel_rating">
 										<i></i>
 										<i></i>
@@ -342,10 +343,10 @@
 										<i></i>
 										<i></i>
 									</div>
-									<div class="hotel_location">345 677 Gran Via Street, no 34, Madrid, Spain</div>
+									<div class="hotel_location">{{ $ads->lokasi_properti }}, {{ $ads->provinsi_properti }}</div>
 								</div>
 								<div class="hotel_title_button ml-lg-auto text-lg-right">
-									<div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
+									<div class="button book_button trans_200"><a href="https://wa.me/{{ $ads->nomor_telepon_properti }}"><i class="fa fa-whatsapp" aria-hidden="true"></i> Hubungi Penjual</a></div>
 									<div class="hotel_map_link_container">
 										<div class="hotel_map_link">See Location on Map</div>
 									</div>
@@ -355,7 +356,8 @@
 							<!-- Listing Image -->
 
 							<div class="hotel_image">
-								<img src="images/listing_hotel.jpg" alt="">
+								<img src="{{ Storage::url($ads->featured_image) }}" alt="">
+								{{-- <img src="images/listing_hotel.jpg" alt=""> --}}
 								<div class="hotel_review_container d-flex flex-column align-items-center justify-content-center">
 									<div class="hotel_review">
 										<div class="hotel_review_content">
@@ -479,25 +481,39 @@
 							<!-- Hotel Info Text -->
 
 							<div class="hotel_info_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et suscipit urna. Integer elementum orci eu vehicula pretium. Donec bibendum tristique condimentum. Aenean in lacus ligula. Phasellus euismod gravida eros. Aenean nec ipsum aliquet, pharetra magna id, interdum sapien. Etiam id lorem eu nisl pellentesque semper. Nullam tincidunt metus placerat, suscipit leo ut, tempus nulla. Fusce at eleifend tellus. Ut eleifend dui nunc, non fermentum quam placerat non. Etiam venenatis nibh augue, sed eleifend justo tristique eu</p>
+								<p>{{ $ads->deskripsi_properti }}</p>
 							</div>
-
-							<!-- Hotel Info Tags -->
-
-							<div class="hotel_info_tags">
-								<ul class="hotel_icons_list">
-									<li class="hotel_icons_item"><img src="images/post.png" alt=""></li>
-									<li class="hotel_icons_item"><img src="images/compass.png" alt=""></li>
-									<li class="hotel_icons_item"><img src="images/bicycle.png" alt=""></li>
-									<li class="hotel_icons_item"><img src="images/sailboat.png" alt=""></li>
-								</ul>
-							</div>
+                            
+                            <div class="info_info_tags text-dark">
+                                <h4>Info Properti</h4>
+                                <p>Spesifikasi</p>
+                                <table class="table">
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">Luas Bangunan</th>
+                                        <td>{{ $ads->luas_bangunan_properti }} / M <sup>2</sup></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Luas Tanah</th>
+                                        <td>{{ $ads->luas_tanah_properti }}</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Kamar Mandi</th>
+                                        <td>{{ $ads->kamar_mandi_properti }}</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Kamar Tidur</th>
+                                        <td>{{ $ads->kamar_tidur_properti }}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
 
 						</div>
 						
 						<!-- Rooms -->
 
-						<div class="rooms">
+						{{-- <div class="rooms">
 
 							<!-- Room -->
 							<div class="room">
@@ -547,11 +563,11 @@
 								</div>	
 							</div>
 
-						</div>
+						</div> --}}
 
 						<!-- Reviews -->
 
-						<div class="reviews">
+						{{-- <div class="reviews">
 							<div class="reviews_title">reviews</div>
 							<div class="reviews_container">
 
@@ -604,11 +620,11 @@
 								</div>
 
 							</div>
-						</div>
+						</div> --}}
 
 						<!-- Location on Map -->
 
-						<div class="location_on_map">
+						{{-- <div class="location_on_map">
 							<div class="location_on_map_title">location on map</div>
 
 							<!-- Google Map -->
@@ -621,7 +637,7 @@
 								</div>
 							</div>
 
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>

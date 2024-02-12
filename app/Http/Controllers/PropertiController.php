@@ -111,7 +111,7 @@ class PropertiController extends Controller
 
         if($request->hasFile('featured_image')) {
             //delete image
-            Storage::disk('public')->delete($post->featured_image);
+            Storage::disk('public')->delete($request->featured_image);
 
             $filePath = Storage::disk('public')->put('images/iklan-properties/featured-images', request()->file('featured_image'));
             $validated['featured_image'] = $filePath;
@@ -119,7 +119,7 @@ class PropertiController extends Controller
 
         if($request->hasFile('foto_perusahaan_properti')) {
             //delete image
-            Storage::disk('public')->delete($post->foto_perusahaan_properti);
+            Storage::disk('public')->delete($request->foto_perusahaan_properti);
 
             $filePath = Storage::disk('public')->put('images/iklan-properties/featured-images', request()->file('foto_perusahaan_properti'));
             $validated['foto_perusahaan_properti'] = $filePath;

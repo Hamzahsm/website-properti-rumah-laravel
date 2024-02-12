@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\IklanProperti;
+use App\Models\IklanPremium;
 
 class PagesController extends Controller
 {
     // 
-    public function index() {
-        return view('landing');
-    }
 
     public function test() {
-        return view('test');
+        $ads = IklanProperti::all();
+        $premiums = IklanPremium::all();
+        return view('test', compact('ads', 'premiums'));
     }
 
     public function tentangKami() {

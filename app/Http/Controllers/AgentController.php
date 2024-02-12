@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agent;
+use App\Models\IklanProperti;
+use App\Models\IklanPremium;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -38,10 +40,9 @@ class AgentController extends Controller
         ]); 
     }
 
-    public function singleListing() {
-        return view('agents.single-listing', [
-            'parallaxTitle' => 'Daftar Properti'
-        ]);
+    public function singleListing(string $id) {
+        $ads = IklanProperti::findOrFail($id);
+        return view('agents.single-listing', compact('ads')); 
     }
 
 }

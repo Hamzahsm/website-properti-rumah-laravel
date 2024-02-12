@@ -52,7 +52,7 @@
 							<ul class="main_nav_list">
 								<li class="main_nav_item"><a href="{{ route('cari.properti') }}">Dijual</a></li>
 								<li class="main_nav_item"><a href="{{ route('tentang.kami') }}">Disewa</a></li> 
-								<li class="main_nav_item"><a href="{{ route('single.listing') }}">Properti Baru</a></li>
+								<li class="main_nav_item"><a href="#">Properti Baru</a></li>
 								<li class="main_nav_item"><a href="#">KPR</a></li>
 								<li class="main_nav_item"><a href="#">Panduan</a></li>
 							</ul>
@@ -93,6 +93,6 @@
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="{{ asset('images/home-slider-new-3.jpg') }}"></div>
 		{{-- <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/about_background.jpg"></div> --}}
 		<div class="home_content">
-			<div class="home_title">{{ $parallaxTitle }}</div>
+			<div class="home_title">Judul Halaman</div>
 		</div>
 	</div>

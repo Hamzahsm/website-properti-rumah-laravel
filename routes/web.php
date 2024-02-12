@@ -29,7 +29,7 @@ Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth', 'verified']], function() {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
@@ -38,9 +38,7 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 });
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/landing-page', [PagesController::class, 'index'])->name('index');
-
-    Route::get('/test-home', [PagesController::class, 'test'])->name('test'); 
+    Route::get('/test-home', [PagesController::class, 'test'])->name('test');  
     
     Route::get('/tentang-kami', [PagesController::class, 'tentangKami'])->name('tentang.kami');
     
@@ -51,7 +49,7 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/cari-agen', [AgentController::class, 'index'])->name('cari.agen'); 
     Route::get('/jual-properti-online', [AgentController::class, 'jualProperti'])->name('jual.properti');
     Route::get('/explore', [AgentController::class, 'explore'])->name('explore');
-    Route::get('/single-listing', [AgentController::class, 'singleListing'])->name('single.listing'); 
+    Route::get('/single-listing/{IklanProperti:id}', [AgentController::class, 'singleListing'])->name('single.listing');  
     Route::resource('posts', PostController::class); 
     // Route::resource('properties', PropertiController::Class);
 }); 

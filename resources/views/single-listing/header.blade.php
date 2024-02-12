@@ -53,7 +53,7 @@
 							<ul class="main_nav_list">
 								<li class="main_nav_item"><a href="{{ route('cari.properti') }}">Dijual</a></li>
 								<li class="main_nav_item"><a href="{{ route('tentang.kami') }}">Disewa</a></li> 
-								<li class="main_nav_item"><a href="{{ route('single.listing') }}">Properti Baru</a></li>
+								<li class="main_nav_item"><a href="#">Properti Baru</a></li>
 								<li class="main_nav_item"><a href="#">KPR</a></li>
 								<li class="main_nav_item"><a href="#">Panduan</a></li>
 							</ul>

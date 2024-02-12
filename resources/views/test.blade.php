@@ -1,3 +1,3 @@
 @extends('layouts.home')
-@section('home-container')
+@section('home-container') 
 @endsection
