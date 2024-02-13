@@ -280,7 +280,7 @@ $(document).ready(function()
 				loop:true,
 				autoplay:true,
 				nav:false,
-				dots:true,
+				dots:false,
 				smartSpeed:1200
 			});
 
