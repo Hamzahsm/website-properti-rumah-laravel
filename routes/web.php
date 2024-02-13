@@ -9,6 +9,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController; 
 use App\Http\Controllers\IklanPremiumController; 
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +53,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/single-listing/{IklanProperti:id}', [AgentController::class, 'singleListing'])->name('single.listing');  
     Route::resource('posts', PostController::class); 
     // Route::resource('properties', PropertiController::Class);
+
+    //route search 
+    Route::get('/cari-properti', [SearchController::class, 'cariProperti'])->name('cari.properti');
+    Route::get('/cari-iklan-premium', [SearchController::class, 'cariIklanPremium'])->name('cari.iklan.premium');
 }); 
