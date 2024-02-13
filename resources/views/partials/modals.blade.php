@@ -15,7 +15,7 @@
         </div> 
       </div>
 
-<!-- Modal agen properti-->
+<!-- Modal agen properti--> 
 <div class="modal fade" id="iklanAgen" tabindex="-1" aria-labelledby="iklanAgenModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content"> 
@@ -55,10 +55,10 @@
             <input type="text" class="form-control" name="domisili" id="domisili" required>
           </div>
 
-          <div class="mb-3">
+          {{-- <div class="mb-3">
             <label for="foto_profile" class="form-lable">Foto</label>
             <input type="file" class="form-control" name="foto_profile" id="foto_profile" required>
-          </div>
+          </div> --}}
 
           <div class="mb-3 text-center">
             <button class="btn btn-primary" type="submit">Daftar</button>

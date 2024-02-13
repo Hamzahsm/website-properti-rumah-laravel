@@ -45,4 +45,31 @@ class AgentController extends Controller
         return view('agents.single-listing', compact('ads')); 
     }
 
+    public function loginAgen(Request $request)
+    {
+
+        request()->validate([
+            'nama' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'telepon' => ['required', 'string', 'min:5', 'max:255'],
+            'domisili' => ['required', 'string', 'min:5', 'max:300']
+        ]);
+
+        $user = Agent::create([
+            'nama' => request('nama'),
+            'email' => request('email'),
+            'password' => Hash::make(request('password')),
+            'telepon' => request('telepon'),
+            'domisili' => request('domisili'),
+        ]);
+
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect()->to('/login');
+        // return redirect()->to(RouteServiceProvider::HOME);
+    }
+
 }

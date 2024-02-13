@@ -29,7 +29,7 @@ Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth', 'verified']], function() {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
@@ -45,7 +45,7 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/cari', [PagesController::class, 'cari'])->name('cari.properti'); 
     
     // Route Agen
-    Route::post('/login-agen', [AgentController::class, 'loginAgen'])->name('login.agen');
+    Route::post('/login-agen', [AgentController::class, 'loginAgen'])->name('login.agen'); 
     Route::get('/cari-agen', [AgentController::class, 'index'])->name('cari.agen'); 
     Route::get('/jual-properti-online', [AgentController::class, 'jualProperti'])->name('jual.properti');
     Route::get('/explore', [AgentController::class, 'explore'])->name('explore');
