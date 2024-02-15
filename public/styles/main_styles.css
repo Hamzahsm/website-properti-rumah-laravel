@@ -2215,3 +2215,7 @@ custom
 .hover-animate:hover {
 	transform : scale(1.1);
 }
+
+.top3 {
+	padding-top: 20px;
+}
