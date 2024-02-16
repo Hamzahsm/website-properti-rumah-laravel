@@ -29,6 +29,52 @@
 <script src="{{ asset('plugins/parallax-js-master/parallax.min.js') }}"></script>
 <script src="{{ asset('js/blog_custom.js') }}"></script> 
 
+<script>
+    	function harga_properti() {
+		var harga = document.getElementById('harga_properti');
+		return harga.value;
+	}
+
+	function uang_muka() {
+		var pembayaran = document.getElementById('uang_muka');
+		return pembayaran.value;
+	}
+
+	var pilihan_suku_bunga = new Array();
+	pilihan_suku_bunga["none"] = 0;
+	pilihan_suku_bunga["bunga_rendah"] = 5;
+	pilihan_suku_bunga["bunga_bank"] = 10;
+
+	function ambil_bunga() {
+		var sukuBunga = 0;
+		var theForm = document.forms["formCalculate"];
+		var selectedFilling = theForm.elements["pilihan_suku_bunga"];
+		sukuBunga = pilihan_suku_bunga[selectedFilling.value];
+		return sukuBunga;
+	}
+
+	function tenor() {
+		var jangkaTenor = document.getElementById('tenor');
+		return jangkaTenor.value;
+	}
+
+	function calculateTotal() {
+		// var totalKpr = (harga_properti() * ambil_bunga() / 100) / tenor() - uang_muka() ; //the calculation is good now! did anyone know how to change input type to currecny ?
+		var totalKpr = ((harga_properti() - uang_muka() ) * ambil_bunga() / 100) / tenor() ; //the calculation is good now! did anyone know how to change input type to currecny ?
+		var divobj = document.getElementById('totalPrice'); //display the result
+		divobj.style.display = 'block';
+		divobj.innerHTML = "Angsuran Tiap Bulan" + totalKpr.toLocaleString('en-US', {
+			style: 'currency',
+			currency: 'IDR',
+		});
+	}
+
+	function hideTotal() {
+		var divobj = document.getElementById('totalPrice');
+		divobj.style.display = 'none';
+	}
+
+</script>
 </body>
 
 </html>

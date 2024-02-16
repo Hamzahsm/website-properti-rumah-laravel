@@ -45,8 +45,7 @@ Route::middleware(['guest'])->group(function () {
     
     Route::get('/cari', [PagesController::class, 'cari'])->name('cari.properti'); 
     
-    // Route Agen
-    Route::post('/login-agen', [AgentController::class, 'loginAgen'])->name('login.agen'); 
+    Route::post('/login-agen', [AgentController::class, 'loginAgen'])->name('login.agen'); //Route Agen
     Route::get('/cari-agen', [AgentController::class, 'index'])->name('cari.agen'); 
     Route::get('/jual-properti-online', [AgentController::class, 'jualProperti'])->name('jual.properti');
     Route::get('/explore', [AgentController::class, 'explore'])->name('explore');
@@ -54,7 +53,8 @@ Route::middleware(['guest'])->group(function () {
     Route::resource('posts', PostController::class); 
     // Route::resource('properties', PropertiController::Class);
 
-    //route search 
-    Route::get('/cari-properti', [SearchController::class, 'cariProperti'])->name('cari.properti');
+    Route::get('/cari-properti', [SearchController::class, 'cariProperti'])->name('cari.properti'); //route search
     Route::get('/cari-iklan-premium', [SearchController::class, 'cariIklanPremium'])->name('cari.iklan.premium');
+
+    Route::get('simulasi-kpr', [PagesController::class, 'simulasiKpr'])->name('simulasi.kpr');
 }); 

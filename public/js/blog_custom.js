@@ -9,6 +9,7 @@
 3. Init Menu
 4. Init Lightbox
 5. Init Search Form
+6. calculator rent
 
 
 ******************************/
@@ -193,4 +194,57 @@ $(document).ready(function()
 			});	
 		}
 	}
+
+	/*
+
+	6. calculator 
+
+	**/
+
+	// function harga_properti() {
+	// 	var harga = document.getElementById('harga_properti');
+	// 	return harga.value;
+	// }
+
+	// function uang_muka() {
+	// 	var pembayaran = document.getElementById('uang_muka');
+	// 	return pembayaran.value;
+	// }
+
+	// var pilihan_suku_bunga = new Array();
+	// pilihan_suku_bunga["none"] = 0;
+	// pilihan_suku_bunga["bunga_rendah"] = 1;
+	// pilihan_suku_bunga["bunga_bank"] = 2;
+
+	// function ambilBunga() {
+	// 	var sukuBunga = 0;
+	// 	var theForm = document.forms["formCalculate"];
+	// 	var selectedFilling = theForm.elements["pilihan_suku_bunga"];
+	// 	sukuBunga = pilihan_suku_bunga[selectedFilling.value];
+	// 	return sukuBunga;
+	// }
+
+	// function tenor() {
+	// 	var jangkaTenor = document.getElementById('tenor');
+	// 	return jangkaTenor.value;
+	// }
+
+	// function calculateTotal() {
+	// 	var totalKpr = harga_properti() - uang_muka() * ambilBunga() ;
+	// 	// var totalKpr = harga_properti() - uang_muka() * ambilBunga() / 100 / tenor();
+	// 	var divobj = document.getElementById('totalPrice'); //display the result
+	// 	divobj.style.display = 'block';
+	// 	divobj.innerHTML = "Angsuran Tiap Bulan" + totalKpr.toLocaleString('en-US', {
+	// 		style: 'currency',
+	// 		currency: 'IDR',
+	// 	});
+	// }
+
+	// function hideTotal() {
+	// 	var divobj = document.getElementById('totalPrice');
+	// 	divobj.style.display = 'none';
+	// }
+
+
+
 });

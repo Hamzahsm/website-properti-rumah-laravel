@@ -15,7 +15,7 @@
                 </a>
             </div>
             <div class="col p-3 hover-animate ">
-                <a href="#">
+                <a href="{{ route('simulasi.kpr') }}">
                     <img src="{{ asset('images/svg/simulasi-kpr.svg') }}" alt="" class="mb-2 img-responsive">
                     <p class="text-dark">Simulasi KPR</p>
                 </a>
