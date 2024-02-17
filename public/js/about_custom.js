@@ -324,7 +324,7 @@ $(document).ready(function()
 				autoplayTimeout:1000,
 				autoplayHoverPause:true,
 				nav:false,
-				dots:true,
+				dots:false,
 				// smartSpeed:200,
 				margin:30,
 				responsive:{
@@ -361,7 +361,7 @@ $(document).ready(function()
 				autoplayTimeout:1000,
 				autoplayHoverPause:true,
 				nav:false,
-				dots:true,
+				dots:false,
 				// smartSpeed:200,
 				margin:30,
 				responsive:{

@@ -497,7 +497,7 @@ $(document).ready(function()
 				autoplayTimeout:3000,
 				autoplayHoverPause:true,
 				nav:false,
-				dots:true,
+				dots:false,
 				// smartSpeed:200,
 				margin:30,
 				responsive:{

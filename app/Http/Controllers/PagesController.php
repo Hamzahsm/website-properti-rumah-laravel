@@ -33,4 +33,8 @@ class PagesController extends Controller
     public function pindahKpr() {
         return view('pages.pindah-kpr');
     }
+
+    public function jualPropertimu() {
+        return view('pages.jual-properti');
+    }
 }

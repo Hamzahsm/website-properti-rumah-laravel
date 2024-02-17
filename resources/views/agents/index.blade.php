@@ -17,39 +17,49 @@
     </div>
 
     <div class="container mt-5">
-        <h2 class="text-start mb-3 fs-4 fw-bold text-dark">Lokasi Agen</h2>
+        <h3 class="text-start font-weight-bold text-dark">Lokasi Agen</h3>
         <p class="text-start mb-3 ">Temukan agen terbaik di lokasi incaran</p>
 
         <div class="agent_slider_container">
             <div class="owl-carousel owl-theme agen_slider">
-                <div class="item">
-                    <img src="{{ asset('images/offer_3.jpg') }}" alt="" class="mb-3">
-                    <p>Malang</p>
-                    <p>10 Agent</p>
+                <div class="item text-center">
+                    <a href="#">
+                        <img src="{{ asset('images/rumah/agen.jpg') }}" alt="" class="mb-3">
+                        <p>Malang</p>
+                        <p>10 Agent</p>
+                    </a>
                 </div>
-                <div class="item">
-                    <img src="{{ asset('images/offer_3.jpg') }}" alt="" class="mb-3">
-                    <p>Malang</p>
-                    <p>10 Agent</p>
+                <div class="item text-center">
+                    <a href="#">
+                        <img src="{{ asset('images/rumah/agen.jpg') }}" alt="" class="mb-3">
+                        <p>Surabaya</p>
+                        <p>10 Agent</p>
+                    </a>
                 </div>
-                <div class="item">
-                    <img src="{{ asset('images/offer_3.jpg') }}" alt="" class="mb-3">
-                    <p>Malang</p>
-                    <p>10 Agent</p>
+                <div class="item text-center">
+                    <a href="#">
+                        <img src="{{ asset('images/rumah/agen.jpg') }}" alt="" class="mb-3">
+                        <p>Blitar</p>
+                        <p>10 Agent</p>
+                    </a>
                 </div>
-                <div class="item">
-                    <img src="{{ asset('images/offer_3.jpg') }}" alt="" class="mb-3">
-                    <p>Malang</p>
-                    <p>10 Agent</p>
+                <div class="item text-center">
+                    <a href="#">
+                        <img src="{{ asset('images/rumah/agen.jpg') }}" alt="" class="mb-3">
+                        <p>Sidoarjo</p>
+                        <p>10 Agent</p>
+                    </a>
                 </div>
-                <div class="item">
-                    <img src="{{ asset('images/offer_3.jpg') }}" alt="" class="mb-3">
-                    <p>Malang</p>
-                    <p>10 Agent</p>
+                <div class="item text-center">
+                    <a href="#">
+                        <img src="{{ asset('images/rumah/agen.jpg') }}" alt="" class="mb-3">
+                        <p>Kediri</p>
+                        <p>10 Agent</p>
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
+    </div> <!-- lokasi agen -->
 
 
 	<div class="container intro">
@@ -67,23 +77,11 @@
                         </div>
                         <div class="col-lg-8">
                             <div class="offers_content">
-                                <div class="offers_price">$70<span>per night</span></div>
-                                <div class="rating_r rating_r_4 offers_rating" data-rating="4">
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                                <p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet.</p>
-                                <div class="offers_icons">
-                                    <ul class="offers_icons_list">
-                                        <li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-                                    </ul>
-                                </div>
+                                <ul>
+                                    <li>Nama : xxx</li>
+                                    <li>Jumlah Iklan : xxx</li>
+                                    <li>Anggota Sejak : xxx</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -100,23 +98,11 @@
                         </div>
                         <div class="col-lg-8">
                             <div class="offers_content">
-                                <div class="offers_price">$70<span>per night</span></div>
-                                <div class="rating_r rating_r_4 offers_rating" data-rating="4">
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                                <p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet.</p>
-                                <div class="offers_icons">
-                                    <ul class="offers_icons_list">
-                                        <li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-                                    </ul>
-                                </div>
+                                <ul>
+                                    <li>Nama : xxx</li>
+                                    <li>Jumlah Iklan : xxx</li>
+                                    <li>Anggota Sejak : xxx</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -136,23 +122,11 @@
                         </div>
                         <div class="col-lg-8">
                             <div class="offers_content">
-                                <div class="offers_price">$70<span>per night</span></div>
-                                <div class="rating_r rating_r_4 offers_rating" data-rating="4">
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                                <p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet.</p>
-                                <div class="offers_icons">
-                                    <ul class="offers_icons_list">
-                                        <li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-                                    </ul>
-                                </div>
+                                <ul>
+                                    <li>Nama : xxx</li>
+                                    <li>Jumlah Iklan : xxx</li>
+                                    <li>Anggota Sejak : xxx</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -169,23 +143,11 @@
                         </div>
                         <div class="col-lg-8">
                             <div class="offers_content">
-                                <div class="offers_price">$70<span>per night</span></div>
-                                <div class="rating_r rating_r_4 offers_rating" data-rating="4">
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                                <p class="offers_text">Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Lorem ipsum dolor sit amet.</p>
-                                <div class="offers_icons">
-                                    <ul class="offers_icons_list">
-                                        <li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-                                    </ul>
-                                </div>
+                                <ul>
+                                    <li>Nama : xxx</li>
+                                    <li>Jumlah Iklan : xxx</li>
+                                    <li>Anggota Sejak : xxx</li>
+                                </ul>
                             </div>
                         </div>
                     </div>

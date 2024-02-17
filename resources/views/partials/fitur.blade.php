@@ -9,7 +9,7 @@
                 </a>
             </div>
             <div class="col p-3 hover-animate ">
-                <a href="#">
+                <a href="{{ route('cari.agen') }}">
                     <img src="{{ asset('images/svg/cari-agen.svg') }}" alt="" class="mb-2 img-responsive">
                     <p class="text-dark">Cari Agen</p>
                 </a>
@@ -27,29 +27,29 @@
                 </a>
             </div>
             <div class="col p-3 hover-animate">
-                <a href="#">
+                <a href="{{ route('login') }}">
                     <img src="{{ asset('images/svg/iklankan-properti.svg') }}" alt="" class="mb-2 img-responsive">
                     <p class="text-dark">Iklankan Properti</p>
                 </a>
             </div>
             <div class="col p-3 hover-animate">
-                <a href="#">
+                <a href="{{ route('explore') }}">
                     <img src="{{ asset('images/svg/explore-area.svg') }}" alt="" class="mb-2 img-responsive">
                     <p class="text-dark">Explore Area</p>
                 </a>
             </div>
             <div class="col p-3 hover-animate">
-                <a href="#">
+                <a href="{{ route('jual.propertimu') }}">
                     <img src="{{ asset('images/svg/jual-propertimu.svg') }}" alt="" class="mb-2 img-responsive">
                     <p class="text-dark">Jual Propertimu</p>
                 </a>
             </div>
-            <div class="col p-3 hover-animate">
+            {{-- <div class="col p-3 hover-animate">
                 <a href="#">
                     <img src="{{ asset('images/svg/quick-menu-others-icon.svg') }}" alt="" class="mb-2 img-responsive">
                     <p class="text-dark">Lainnya</p>
                 </a>
-            </div>
+            </div> --}}
         </div>
     </div>
     
