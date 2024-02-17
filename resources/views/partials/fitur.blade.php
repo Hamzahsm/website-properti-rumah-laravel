@@ -21,7 +21,7 @@
                 </a>
             </div>
             <div class="col p-3 hover-animate ">
-                <a href="#">
+                <a href="{{ route('pindah.kpr') }}">
                     <img src="{{ asset('images/svg/pindah-kpr.svg') }}" alt="" class="mb-2 img-responsive">
                     <p class="text-dark">Pindah KPR</p>
                 </a>

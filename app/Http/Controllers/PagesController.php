@@ -29,4 +29,8 @@ class PagesController extends Controller
     public function simulasiKpr() {
         return view('pages.simulasi-kpr');
     }
+
+    public function pindahKpr() {
+        return view('pages.pindah-kpr');
+    }
 }

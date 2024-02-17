@@ -57,4 +57,5 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/cari-iklan-premium', [SearchController::class, 'cariIklanPremium'])->name('cari.iklan.premium');
 
     Route::get('simulasi-kpr', [PagesController::class, 'simulasiKpr'])->name('simulasi.kpr');
+    Route::get('pindah-kpr', [PagesController::class, 'pindahKpr'])->name('pindah.kpr');
 }); 
