@@ -1458,3 +1458,17 @@ section
 {
 	color: #FFFFFF;
 }
+
+/** 
+
+custom
+
+**/
+
+.intro
+{
+	width: 100%;
+	padding-top: 92px;
+	padding-bottom: 105px;
+	background: #f6f9fb;
+}

@@ -3,7 +3,7 @@
     <div class="container d-lg-block d-none" data-aos="fade-up" data-aos-delay="100">
         <div class="row text-center">
             <div class="col p-3 hover-animate">
-                <a href="#">
+                <a href="{{ route('carikan.properti') }}">
                     <img src="{{ asset('images/svg/carikan-properti.svg') }}" alt="" class="mb-2 img-responsive">
                     <p class="text-dark">Carikan Properti</p>
                 </a>

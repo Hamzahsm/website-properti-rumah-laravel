@@ -59,4 +59,6 @@ Route::middleware(['guest'])->group(function () {
     Route::get('simulasi-kpr', [PagesController::class, 'simulasiKpr'])->name('simulasi.kpr');
     Route::get('pindah-kpr', [PagesController::class, 'pindahKpr'])->name('pindah.kpr');
     Route::get('pemilik-properti', [PagesController::class, 'jualPropertimu'])->name('jual.propertimu'); 
+    Route::get('carikan-properti', [PagesController::class, 'carikanProperti'])->name('carikan.properti');
+    Route::post('carikan-properti', [PagesController::class, 'StoreCarikanProperti'])->name('store.carikan.properti');
 }); 

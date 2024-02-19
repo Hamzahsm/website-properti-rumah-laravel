@@ -19,11 +19,13 @@
 </div> --}}
 
 	<!-- form search -->
-	<div class="container">
-		<form action="#" method="get">
-			@csrf
-			<input type="text" class="form-control mt-3" name="" placeholder="masukkan lokasi">
-			{{-- <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i> Cari</button> --}}
+	<div class="intro">
+		<div class="container">
+			<form action="#" method="get">
+				@csrf
+				<input type="text" class="form-control mt-3" name="" placeholder="masukkan lokasi">
+				{{-- <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i> Cari</button> --}}
+		</div>
 	</div>
 
 
