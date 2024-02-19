@@ -49,7 +49,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/cari-agen', [AgentController::class, 'index'])->name('cari.agen'); 
     Route::get('/jual-properti-online', [AgentController::class, 'jualProperti'])->name('jual.properti');
     Route::get('/explore', [AgentController::class, 'explore'])->name('explore');
-    Route::get('/single-listing/{IklanProperti:id}', [AgentController::class, 'singleListing'])->name('single.listing');  
+    Route::get('/single-listing/{IklanProperti:id}', [AgentController::class, 'singleListing'])->name('single.listing'); 
+    Route::get('/iklan-premium/{IklanPremium:id}', [AgentController::class, 'showIklanPremium'])->name('show.iklan.premium'); //show iklan premium 
     Route::resource('posts', PostController::class); 
     // Route::resource('properties', PropertiController::Class);
 
@@ -63,4 +64,4 @@ Route::middleware(['guest'])->group(function () {
     Route::get('carikan-properti', [PagesController::class, 'carikanProperti'])->name('carikan.properti');
     Route::post('carikan-properti', [PagesController::class, 'StoreCarikanProperti'])->name('store.carikan.properti');
     Route::post('get-in-touch', [AgentController::class, 'StoreGetInTouch'])->name('store.get.in.touch');
-}); 
+});  

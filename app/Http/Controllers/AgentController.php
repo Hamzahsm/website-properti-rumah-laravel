@@ -42,6 +42,11 @@ class AgentController extends Controller
     public function singleListing(string $id) {
         $ads = IklanProperti::findOrFail($id);
         return view('agents.single-listing', compact('ads')); 
+    } 
+
+    public function showIklanPremium(string $id) {
+        $ads = IklanPremium::findOrFail($id);
+        return view('agents.show-iklan-premium', compact('ads'));
     }
 
     public function loginAgen(Request $request)

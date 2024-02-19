@@ -17,12 +17,12 @@
                                 <div class="intro_item_background" style="background-image:url({{ Storage::url($item->featured_image) }})"></div>
                                 <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
                                     <div class="intro_date">{{ $item->judul_properti }}</div>
-                                    <div class="button intro_button"><div class="button_bcg"></div><a href="#"><i class="fa fa-external-link" aria-hidden="true"></i> {{ $item->harga_start_properti }} - {{ $item->harga_end_properti }}</a></div>
+                                    <div class="button intro_button"><div class="button_bcg"></div><a href="{{ route('show.iklan.premium', $item->id) }}"><i class="fa fa-external-link" aria-hidden="true"></i> {{ $item->harga_start_properti }} - {{ $item->harga_end_properti }}</a></div>
                                     <ul class="text-white">
                                         <li><i class="fa fa-bed" aria-hidden="true"></i> : {{ $item->kamar_tidur_properti }}</li>
                                         <li><i class="fa fa-bath" aria-hidden="true"></i> : {{ $item->kamar_mandi_properti }}</li>
                                         <li>LT : {{ $item->luas_tanah_properti }} </li>
-                                        <li>LB : {{ $item->luas_bangunan_properti }}</li>
+                                        <li>LB : {{ $item->luas_bangunan_properti }}</li> 
                                     </ul>
                                 </div>
                             </div>

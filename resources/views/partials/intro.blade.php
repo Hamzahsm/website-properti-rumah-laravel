@@ -18,10 +18,8 @@
                                 <div class="intro_item_background" style="background-image:url({{ Storage::url($item->featured_image) }})"></div>
                                 <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
                                     <div class="intro_date">{{ $item->judul_properti }}</div>
-                                    {{-- <div class="intro_date">Diuplod : {{ $item->created_at }}</div> --}}
                                     <div class="button intro_button">
                                         <div class="button_bcg"></div>
-                                        {{-- <a href="{{ route('properties.show', $item->id) }}"><i class="fa fa-external-link" aria-hidden="true"></i> {{ $item->harga_start_properti }} - {{ $item->harga_end_properti }}</a> --}}
                                         <a href="/single-listing/{{ $item->id }}"><i class="fa fa-external-link" aria-hidden="true"></i> {{ $item->harga_start_properti }} - {{ $item->harga_end_properti }}</a>
                                     </div>
                                     <ul class="text-white">
