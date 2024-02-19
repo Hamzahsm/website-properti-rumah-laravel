@@ -2,12 +2,11 @@
 @section('content') 
 <div class="intro">
     <div class="container">
-        <form class="#" method="get">
-            @csrf
+        <form action="{{ route('cari.agen.rumah') }}" method="GET">
             <div class="form-row align-items-center">
               <div class="col-lg-6">
-                <label class="sr-only" for="inlineFormInput">Name</label>
-                <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Masukkan Nama Agen">
+                <label class="sr-only" for="name">Nama</label>
+                <input type="text" class="form-control mb-2" id="name" name="keyword" placeholder="Ketikkan Nama">
               </div>
               <div class="col-lg-2">
                 <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-search" aria-hidden="true"></i> Cari</button>
@@ -155,7 +154,7 @@
             </div> 
         </div>
 	</div>	
-</div>
+</div> 
 
 
 @endsection

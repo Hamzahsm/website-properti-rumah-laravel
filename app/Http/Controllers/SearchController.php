@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\IklanProperti;
 use App\Models\IklanPremium;
+use App\Models\User;
 
 class SearchController extends Controller
 {
@@ -30,5 +31,16 @@ class SearchController extends Controller
         }
 
         return view('search.cari-properti', compact('properties'));
+    }
+
+    public function cariAgen(Request $request)
+    {
+        if($request->keyword) {
+            $users = User::search($request->keyword)->get();
+        } else {
+            $users = User::get();
+        } 
+
+        return view('search.cari-agen', compact('users'));
     }
 }

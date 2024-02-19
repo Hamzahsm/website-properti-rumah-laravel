@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Agent;
 use App\Models\IklanProperti;
 use App\Models\IklanPremium;
+use App\Models\GetInTouch;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -13,11 +14,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Http\Requests\GetInTouch\StoreRequest;
 
 use App\Http\Controllers\Controller;
-// use Illuminate\Foundation\Auth\RegistersUsers;
-// use Illuminate\Support\Facades\Hash;
-// use Illuminate\Support\Facades\Validator;
 
 class AgentController extends Controller
 {
@@ -70,6 +69,19 @@ class AgentController extends Controller
 
         return redirect()->to('/login');
         // return redirect()->to(RouteServiceProvider::HOME);
+    }
+
+    public function StoreGetInTouch(StoreRequest $request)
+    {
+        $validated = $request->validated();
+
+        $create = GetInTouch::create($validated);
+
+        if($create) {
+            return redirect()->route('test');
+        }
+
+        return abort(500);
     }
 
 }

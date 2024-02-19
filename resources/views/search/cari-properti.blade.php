@@ -56,8 +56,9 @@
         
                         <!-- Sidebar Search -->
                         <div class="sidebar_search">
-                            <form action="#">
-                                <input id="sidebar_search_input" type="search" class="sidebar_search_input" placeholder="" required="required">
+                            <form action="{{ route('cari.properti') }}" method="GET">
+                                @csrf
+                                <input id="sidebar_search_input" type="search" name="keyword" class="sidebar_search_input" placeholder="Cari properti lain" required="required">
                                 <button id="sidebar_search_button" type="submit" class="sidebar_search_button trans_300" value="Submit">
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     width="17px" height="17px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
@@ -82,7 +83,7 @@
                                     </svg>
                                 </button>
                             </form>
-                        </div>
+                        </div> 
                         
                         <!-- Sidebar Archives -->
                         <div class="sidebar_archives">
