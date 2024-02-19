@@ -32,6 +32,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert') <!-- sweet alert -->
     @include('dashboard.header')
     @include('dashboard.sidebar')
   <main id="main" class="main">

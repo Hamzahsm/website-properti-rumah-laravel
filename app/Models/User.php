@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Scout\Searchable;
+use App\Models\IklanProperti; //db relation
+use App\Models\IklanPremium;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -50,7 +52,9 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     /**
+     * 
      * fitur untuk search user
+     * 
      */
 
      public function toSearchableArray(): array
@@ -58,5 +62,18 @@ class User extends Authenticatable implements MustVerifyEmail
         return [
             'name' => $this->name,
         ];
+    }
+
+    /**
+     * 
+     * db relation
+     * 
+     */
+    public function iklanProperti(){
+        return $this->hasMany(IklanProperti::class);
+    }
+
+    public function iklanPremium(){
+        return $this->hasMany(IklanPremium::class);
     }
 }

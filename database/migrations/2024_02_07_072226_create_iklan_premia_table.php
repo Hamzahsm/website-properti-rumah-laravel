@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('iklan_premia', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable();
+            $table->foreignId('user_id')->nullable(); 
             $table->foreignId('agent_id')->nullable();
             $table->string('judul_properti');
             $table->string('slug')->unique();

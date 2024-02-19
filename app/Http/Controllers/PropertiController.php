@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\IklanProperti\StoreRequest;
 use App\Http\Requests\IklanProperti\UpdateRequest;
 use App\Models\IklanProperti;
+use Alert; //sweet alert
 
 class PropertiController extends Controller 
 {
@@ -29,10 +30,9 @@ class PropertiController extends Controller
      */
     public function index()
     {
-        //
-        // return view('properties.index', [
-        //     'parallaxTitle' => 'Properti Dijual'
-        // ]);   
+        $titleDelete = 'Hapus Iklan !';
+        $textDelete = 'Apakah Anda Yakin ?';
+        confirmDelete($titleDelete, $textDelete);
 
         $ads = IklanProperti::all();
         return view('dashboard.manage-iklan-properti-index', compact('ads'));
@@ -69,6 +69,9 @@ class PropertiController extends Controller
             $filePath = Storage::disk('public')->put('images/iklan-properties/foto-perusahaan', request()->file('foto_perusahaan_properti'));
             $validated['foto_perusahaan_properti'] = $filePath;
         }
+
+        // validasi user id
+        $validated['user_id'] = auth()->user()->id;
 
         //insert only requests that already validated in the StoreRequest
         $create = IklanProperti::create($validated);
@@ -148,7 +151,9 @@ class PropertiController extends Controller
         $delete = $ads->delete($id);
 
         if($delete) {
-            return redirect()->route('properties.index')->with('success', 'Iklan Properti Berhasil di Hapus');
+            Alert::success('Hore !', 'Post Deleted Succefully!');
+            return redirect()->route('properties.index');
+            // return redirect()->route('properties.index')->with('success', 'Iklan Properti Berhasil di Hapus');
         }
     }
 }

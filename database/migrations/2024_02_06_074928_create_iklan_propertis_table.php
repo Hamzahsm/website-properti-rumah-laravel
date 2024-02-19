@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('nomor_telepon_properti')->unique(); 
             $table->string('lokasi_properti');
             $table->string('provinsi_properti');
-            $table->string('luas_bangunan_properti');
+            $table->string('luas_bangunan_properti'); 
             $table->string('luas_tanah_properti');
             $table->string('kamar_tidur_properti');
             $table->string('kamar_mandi_properti');

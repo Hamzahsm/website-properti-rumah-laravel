@@ -63,6 +63,9 @@ class IklanPremiumController extends Controller
             $validated['foto_perusahaan_properti'] = $filePath;
         }
 
+        // validasi user id
+        $validated['user_id'] = auth()->user()->id;
+
         //insert only requests that already validated in the StoreRequest
         $create = IklanPremium::create($validated);
 

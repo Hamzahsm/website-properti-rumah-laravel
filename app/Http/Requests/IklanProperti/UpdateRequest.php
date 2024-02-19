@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
         return [
             // 
             'judul_properti' => 'nullable|string|min:3|max:250',
-            'slug' => 'nullable|string', //we will improve this in the future 
+            // 'slug' => 'nullable|string', //we will improve this in the future 
             'nomor_telepon_properti' => 'nullable|string|min:8|max:20',
             'lokasi_properti' => 'nullable|string',
             'provinsi_properti' => 'nullable|string',

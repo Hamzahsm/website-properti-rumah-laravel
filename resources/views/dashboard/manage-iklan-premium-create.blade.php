@@ -22,11 +22,6 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
-                <label for="slug" class="form-lable">Slug</label>
-                <input type="text" name="slug" class="form-control" >
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
                 <label for="nomor_telepon_properti" class="form-lable">No Telpon</label>
                 <input type="number" name="nomor_telepon_properti" class="form-control" >
             </div>

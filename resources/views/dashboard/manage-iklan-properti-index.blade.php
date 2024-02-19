@@ -34,9 +34,10 @@
                         <td>
                             {{-- <a href="{{ route('users.show', $user->id) }}" class="btn btn-info">Show</a> --}}
                             <a href="{{ route('properties.edit', $key->id) }}" class="btn btn-primary">Edit</a>
-                            {!! Form::open(['method' => "DELETE", 'route'=> ['properties.destroy', $key->id], 'style' => 'display:inline']) !!}
+                            {{-- {!! Form::open(['method' => "DELETE", 'route'=> ['properties.destroy', $key->id], 'style' => 'display:inline']) !!}
                                 {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
+                            {!! Form::close() !!} --}}
+                            <a href="{{ route('properties.destroy', $key->id) }}" data-confirm-delete="true" class="text-danger"><i class="bi bi-trash text-danger"></i> Hapus</a>
                         </td>
                     </tr>
                 @endforeach

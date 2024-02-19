@@ -30,6 +30,7 @@
                 <th>Harga Rendah</th>
                 <th>Harga Tinggi</th>
                 <th>Deskripsi</th>
+                <th>Nama Agen</th>
                 <th>Foto Perusahaan</th>
             </tr>
         </thead>
@@ -47,6 +48,7 @@
                 <td>{{ $data->harga_start_properti }}</td>
                 <td>{{ $data->harga_end_properti }}</td>
                 <td>{{ $data->deskripsi_properti }}</td>
+                <td>{{ $data->user->name }}</td>
                 <td><img src="{{ Storage::url($data->foto_perusahaan_properti) }}" alt=""></td>
             </tr> 
         </tbody>
