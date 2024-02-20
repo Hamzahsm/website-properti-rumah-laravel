@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController; 
 use App\Http\Controllers\IklanPremiumController; 
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,13 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::resource('products', ProductController::class);
     Route::resource('properties', PropertiController::Class);
     Route::resource('ads', IklanPremiumController::class);
+    //exports
+    Route::get('export-pdf-users', [ExportController::class, 'printUsers'])->name('export.pdf.users');
+    Route::get('export-iklan-properti', [ExportController::class, 'printiklanProperti'])->name('export.pdf.iklan.properti');
+    Route::get('export-iklan-premium', [ExportController::class, 'printIklanPremium'])->name('export.pdf.iklan.premium');
+    Route::get('export-excel-users', [ExportController::class, 'exportCsvUsers'])->name('export.csv.users');
+    Route::get('export-excel-iklan-properti', [ExportController::class, 'exportCsvIklanProperti'])->name('export.csv.iklan.properti');
+    Route::get('export-excel-iklan-premium', [ExportController::class, 'exportCsvIklanPremium'])->name('export.csv.iklan.premium');
 });
 
 Route::middleware(['guest'])->group(function () {

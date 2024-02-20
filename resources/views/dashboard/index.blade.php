@@ -122,12 +122,11 @@
                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                   <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
+                    <h6>Export</h6>
                   </li>
 
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
+                  <li><a class="dropdown-item" href="{{ route('export.pdf.users') }}">PDF</a></li>
+                  <li><a class="dropdown-item" href="{{ route('export.csv.users') }}">Excel</a></li> 
                 </ul>
               </div>
 
@@ -179,12 +178,11 @@
                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                   <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
+                    <h6>Export</h6>
                   </li>
 
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
+                  <li><a class="dropdown-item" href="{{ route('export.pdf.iklan.properti') }}">PDF</a></li>
+                  <li><a class="dropdown-item" href="{{ route('export.csv.iklan.properti') }}">Excel</a></li>
                 </ul>
               </div>
 
@@ -230,12 +228,11 @@
                 <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                   <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
+                    <h6>Export</h6>
                   </li>
 
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
+                  <li><a class="dropdown-item" href="{{ route('export.pdf.iklan.premium') }}">PDF</a></li>
+                  <li><a class="dropdown-item" href="{{ route('export.csv.iklan.premium') }}">Excel</a></li>
                 </ul>
               </div>
 

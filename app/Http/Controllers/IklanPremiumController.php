@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\IklanPremium\StoreRequest;
 use App\Http\Requests\IklanPremium\UpdateRequest;
 use App\Models\IklanPremium;
+use Alert; //sweet alert
 
 class IklanPremiumController extends Controller
 {
@@ -29,6 +30,10 @@ class IklanPremiumController extends Controller
     public function index()
     {
         //
+        $titleDelete = 'Hapus Iklan!';
+        $textDelete = 'Apakah Anda Yakin ?';
+        confirmDelete($titleDelete, $textDelete);
+
         $data = IklanPremium::all();
         return view('dashboard.manage-iklan-premium-index', compact('data'));
     }
@@ -144,7 +149,8 @@ class IklanPremiumController extends Controller
         $delete = $data->delete($id);
 
         if($delete) {
-            return redirect()->route('ads.index')->with('success', 'Iklan Properti Berhasil di Hapus');
+            Alert::success('Selesai !', 'Iklan Berhasil Dihapus!');
+            return redirect()->route('ads.index');
         }
     }
 }

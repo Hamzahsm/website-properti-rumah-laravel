@@ -32,9 +32,7 @@
                         <td>{{ $key->harga_start_properti }} - {{ $key->harga_end_properti }}</td>
                         <td>
                             <a href="{{ route('ads.edit', $key->id) }}" class="btn btn-primary">Edit</a>
-                            {!! Form::open(['method' => "DELETE", 'route'=> ['ads.destroy', $key->id], 'style' => 'display:inline']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
+                            <a href="{{ route('ads.destroy', $key->id) }}" data-confirm-delete="true" class="btn btn-danger"><i class="bi bi-trash"></i> Hapus</a>
                         </td>
                     </tr>
                 @endforeach

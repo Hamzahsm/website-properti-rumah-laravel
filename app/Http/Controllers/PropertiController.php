@@ -151,7 +151,7 @@ class PropertiController extends Controller
         $delete = $ads->delete($id);
 
         if($delete) {
-            Alert::success('Hore !', 'Post Deleted Succefully!');
+            Alert::success('Selesai', 'Iklan Berhasil Dihapus!');
             return redirect()->route('properties.index');
             // return redirect()->route('properties.index')->with('success', 'Iklan Properti Berhasil di Hapus');
         }
