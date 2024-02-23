@@ -1231,3 +1231,26 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+/**
+ custom ck editor
+*/
+
+.ck-editor__editable[role="textbox"] {
+  /* Editing area */
+  min-height: 200px;
+}
+.ck-content .image {
+  /* Block images */
+  max-width: 80%;
+  margin: 20px auto;
+}
+button.ck.ck-button.ck-off.ck-file-dialog-button {
+  display: none;
+}
+button.ck.ck-button.ck-source-editing-button.ck-off.ck-button_with-text {
+  display: none;
+}
+button.ck.ck-button.ck-off.ck-button_with-text.ck-dropdown__button {
+  display: none;
+}

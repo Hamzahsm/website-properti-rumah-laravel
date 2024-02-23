@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('harga_end_properti');
             $table->text('deskripsi_properti');
             $table->text('featured_image');
+            $table->text('detail_foto_properti')->nullable();
             $table->text('foto_perusahaan_properti')->nullable();
             $table->timestamps();
         });

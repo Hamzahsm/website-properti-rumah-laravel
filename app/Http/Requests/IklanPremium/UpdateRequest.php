@@ -35,6 +35,7 @@ class UpdateRequest extends FormRequest
              'harga_end_properti' => 'nullable|string',
              'deskripsi_properti' => 'nullable|string|min:3|max:6000',
              'featured_image' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
+             'detail_foto_properti' => 'nullable|array',
              'foto_perusahaan_properti' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
         ];
     }

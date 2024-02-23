@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\IklanProperti;
 use App\Models\IklanPremium;
+use App\Models\SellProperti;
+use App\Models\RentProperti;
+use App\Models\GetInTouch;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
@@ -29,6 +33,10 @@ class HomeController extends Controller
         $users = User::all();
         $ads = IklanProperti::all();
         $premiums = IklanPremium::all();
-        return view('dashboard.index', compact('users', 'ads', 'premiums'));
+        $sells = SellProperti::all();
+        $rents = RentProperti::all();
+        $emails = GetInTouch::all();
+        $posts = Post::all();
+        return view('dashboard.index', compact('users', 'ads', 'premiums', 'sells', 'rents', 'emails', 'posts'));
     }
 }

@@ -27,9 +27,10 @@
                             <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary">Edit</a> 
                         @endcan
                         @can('role-delete')
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id], 'style' => 'display:inline']) !!}
+                            {{-- {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id], 'style' => 'display:inline']) !!}
                                 {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
+                            {!! Form::close() !!}  --}}
+                            <a href="{{ route('roles.destroy', $role->id) }}" data-confirm-delete="true" class="btn btn-danger"><i class="bi bi-trash"></i> Hapus</a> 
                         @endcan
                     </td>
                 </tr>

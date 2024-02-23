@@ -31,6 +31,18 @@ class PermissionTableSeeder extends Seeder
             'iklan-premium-create',
             'iklan-premium-edit',
             'iklan-premium-delete',
+            'properti-dijual-list',
+            'properti-dijual-create',
+            'properti-dijual-edit',
+            'properti-dijual-delete',
+            'properti-disewakan-list',
+            'properti-disewakan-create',
+            'properti-disewakan-edit',
+            'properti-disewakan-delete', 
+            'post-list',
+            'post-create',
+            'post-edit',
+            'post-delete',
          ];
       
          foreach ($permissions as $permission) {

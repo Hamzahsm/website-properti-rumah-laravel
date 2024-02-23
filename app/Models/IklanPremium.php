@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
+use Laravel\Scout\Searchable; //searchable feature
 use App\Models\User; //db-relation
 use Cviebrock\EloquentSluggable\Sluggable; //slugable
 
@@ -14,6 +14,15 @@ class IklanPremium extends Model
 
     protected $guarded = [
         'id'
+    ];
+
+    /**
+     * 
+     * Array detail_foto_properti
+     * 
+     */
+    protected $casts = [
+        'detail_foto_properti' => 'array'
     ];
 
     /**

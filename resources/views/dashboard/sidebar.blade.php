@@ -82,6 +82,7 @@
         </ul>
       </li><!-- End iklan properti Nav -->
 
+      @hasanyrole('Admin|User-Iklan-Premium')
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#iklan_premium" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Iklan Premium</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -98,7 +99,75 @@
             </a>
           </li>
         </ul>
-      </li><!-- End iklan properti Nav -->
+      </li><!-- End iklan premium Nav -->
+      @endhasanyrole
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#multiple_images" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Multiple Upload Image</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="multiple_images" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('upload.multiple.images') }}">
+              <i class="bi bi-circle"></i><span>Test Multiple Image</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- Multiple Upload -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#properti_dijual" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Properti Dijual</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="properti_dijual" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('sells.index') }}">
+              <i class="bi bi-circle"></i><span>Semua List</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('sells.create') }}">
+              <i class="bi bi-circle"></i><span>Tambahkan</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- Properti Dijual -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#properti_disewa" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Properti Disewakan</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="properti_disewa" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('rents.index') }}">
+              <i class="bi bi-circle"></i><span>Semua List</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('rents.create') }}">
+              <i class="bi bi-circle"></i><span>Tambahkan</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- Properti Disewakan -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#panduan_artikel" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Panduan Artikel</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="panduan_artikel" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('posts.index') }}">
+              <i class="bi bi-circle"></i><span>Semua List</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('posts.create') }}">
+              <i class="bi bi-circle"></i><span>Tambahkan</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- Buat Panduan -->
 
       <li class="nav-heading">Pages</li>
 

@@ -10,7 +10,7 @@
 
             <div class="col-lg-8">
                 
-                <div class="blog_post_container">
+                <div class="blog_post_container"> 
 
                     <!-- Blog Post -->
                     

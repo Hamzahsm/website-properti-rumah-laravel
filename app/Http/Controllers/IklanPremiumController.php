@@ -55,10 +55,27 @@ class IklanPremiumController extends Controller
         //
         $validated = $request->validated();
 
+        //foto-utama-properti
         if ($request->hasFile('featured_image')){
             //put image in the public storage
             $filePath = Storage::disk('public')->put('images/iklan-premium/featured-images', request()->file('featured_image'));
             $validated['featured_image'] = $filePath;
+        }
+
+        //foto_detail_properti_multiple_upload
+        if ($request->hasFile('detail_foto_properti')) {
+            $images = [];
+
+            foreach($validated['detail_foto_properti'] as $image) {
+                $judulProperti = $request->input('judul_properti');
+                $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
+                $image_path = $image->storeAs('iklan-premium/' . $judulProperti , $fileName , 'public');
+                // $image_path = $image->storeAs('images' , $fileName , 'public');
+
+                array_push($images, $image_path);
+            }
+
+            $validated['detail_foto_properti'] = $images;
         }
 
         // foto_perusahaan_properti
@@ -75,6 +92,7 @@ class IklanPremiumController extends Controller
         $create = IklanPremium::create($validated);
 
         if($create) {
+            Alert::success('Selesai !', 'Berhasil Menambahkan Iklan Baru!');
             return redirect()->route('ads.index')->with('success', 'Iklan Properti Berhasil Ditambahkan!');
         }
 
@@ -92,7 +110,7 @@ class IklanPremiumController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified resource. 
      */
     public function edit(string $id)
     {
@@ -111,6 +129,7 @@ class IklanPremiumController extends Controller
         $ads = IklanPremium::findOrFail($id);
         $validated = $request->validated();
 
+        //foto gambar utama
         if($request->hasFile('featured_image')) {
             //delete image
             Storage::disk('public')->delete($post->featured_image);
@@ -119,6 +138,23 @@ class IklanPremiumController extends Controller
             $validated['featured_image'] = $filePath;
         }
 
+        //foto_detail_properti_multiple_upload
+        if ($request->hasFile('detail_foto_properti')) {
+            $images = [];
+
+            foreach($validated['detail_foto_properti'] as $image) {
+                $judulProperti = $request->input('judul_properti');
+                $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
+                $image_path = $image->storeAs('iklan-premium/' . $judulProperti , $fileName , 'public');
+                // $image_path = $image->storeAs('images' , $fileName , 'public');
+
+                array_push($images, $image_path);
+            }
+
+            $validated['detail_foto_properti'] = $images;
+        }
+
+        //foto perusahaan
         if($request->hasFile('foto_perusahaan_properti')) {
             //delete image
             Storage::disk('public')->delete($post->foto_perusahaan_properti);
@@ -130,6 +166,7 @@ class IklanPremiumController extends Controller
         $update = $ads->update($validated);
 
         if($update) {
+            Alert::success('Selesai !', 'Iklan Berhasil Diperbarui!');
             return redirect()->route('ads.index')->with('success', 'Iklan Berhasil di Update !');
         }
 

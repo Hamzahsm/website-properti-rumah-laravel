@@ -376,67 +376,13 @@
 									<div class="owl-carousel owl-theme hotel_slider">
 
 										<!-- Hotel Gallery Slider Item -->
+                                        @foreach ($ads->detail_foto_properti as $item)
 										<div class="owl-item">
-											<a class="colorbox cboxElement" href="images/listing_1.jpg">
-												<img src="images/listing_thumb_1.jpg" alt="https://unsplash.com/@jbriscoe">
-											</a>
-										</div>
-
-										<!-- Hotel Gallery Slider Item -->
-										<div class="owl-item">
-											<a class="colorbox cboxElement" href="images/listing_2.jpg">
-												<img src="images/listing_thumb_2.jpg" alt="https://unsplash.com/@grovemade">
-											</a>
-										</div>
-
-										<!-- Hotel Gallery Slider Item -->
-										<div class="owl-item">
-											<a class="colorbox cboxElement" href="images/listing_3.jpg">
-												<img src="images/listing_thumb_3.jpg" alt="https://unsplash.com/@fransaraco">
-											</a>
-										</div>
-
-										<!-- Hotel Gallery Slider Item -->
-										<div class="owl-item">
-											<a class="colorbox cboxElement" href="images/listing_4.jpg">
-												<img src="images/listing_thumb_4.jpg" alt="https://unsplash.com/@workweek">
-											</a>
-										</div>
-
-										<!-- Hotel Gallery Slider Item -->
-										<div class="owl-item">
-											<a class="colorbox cboxElement" href="images/listing_5.jpg">
-												<img src="images/listing_thumb_5.jpg" alt="https://unsplash.com/@workweek">
-											</a>
-										</div>
-
-										<!-- Hotel Gallery Slider Item -->
-										<div class="owl-item">
-											<a class="colorbox cboxElement" href="images/listing_6.jpg">
-												<img src="images/listing_thumb_6.jpg" alt="https://unsplash.com/@avidenov">
-											</a>
-										</div>
-
-										<!-- Hotel Gallery Slider Item -->
-										<div class="owl-item">
-											<a class="colorbox cboxElement" href="images/listing_7.jpg">
-												<img src="images/listing_thumb_7.jpg" alt="https://unsplash.com/@pietruszka">
-											</a>
-										</div>
-
-										<!-- Hotel Gallery Slider Item -->
-										<div class="owl-item">
-											<a class="colorbox cboxElement" href="images/listing_8.jpg">
-												<img src="images/listing_thumb_8.jpg" alt="https://unsplash.com/@rktkn">
-											</a>
-										</div>
-
-										<!-- Hotel Gallery Slider Item -->
-										<div class="owl-item">
-											<a class="colorbox cboxElement" href="images/listing_9.jpg">
-												<img src="images/listing_thumb_9.jpg" alt="https://unsplash.com/@mindaugas">
-											</a>
-										</div>
+											<a class="colorbox cboxElement" href="{{ asset('/storage/') . '/' . $item }}">
+                                                    <img src="{{ asset('/storage/') . '/' . $item }}" alt="mutliple-image" width="100" height="100">
+                                                </a>
+                                            </div>
+                                        @endforeach 
 									</div>
 
 									<!-- Hotel Slider Nav - Prev -->

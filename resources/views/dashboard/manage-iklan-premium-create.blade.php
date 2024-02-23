@@ -68,12 +68,17 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
                 <label for="deskripsi_properti" class="form-lable">Deskripsi Properti</label>
-                <textarea name="deskripsi_properti" id="" cols="30" rows="10" class="form-control" placeholder="buatlah deskripsi yang menarik"></textarea>
+                <textarea name="deskripsi_properti" id="editor" cols="30" rows="10" class="form-control" placeholder="buatlah deskripsi yang menarik"></textarea>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
                 <label for="featured_image" class="form-lable">Foto Properti</label>
                 <input type="file" name="featured_image" class="form-control">
+            </div> 
+
+            <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
+                <label for="detail_foto_properti" class="form-lable">Detail Foto Properti</label>
+                <input type="file" name="detail_foto_properti[]" class="form-control" id="detail_foto_properti" multiple="multiple">
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 mb-3">

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use DB;
+use Alert; //sweet alert 
     
 class RoleController extends Controller
 { 
@@ -31,6 +32,10 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
+        $titleDelete = 'Hapus Iklan!';
+        $textDelete = 'Apakah Anda Yakin ?';
+        confirmDelete($titleDelete, $textDelete);
+
         $roles = Role::orderBy('id','DESC')->paginate(5);
         return view('dashboard.manage-role-index',compact('roles'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
@@ -119,8 +124,12 @@ class RoleController extends Controller
     
         $role->syncPermissions($request->input('permission')); 
     
-        return redirect()->route('roles.index')
-                        ->with('success','Role updated successfully');
+        if($role) {
+            Alert::success('Selesai !', 'Role Berhasil Diperbarui!');
+            return redirect()->route('roles.index');
+            // return redirect()->route('roles.index')
+            //                 ->with('success','Role updated successfully');
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -130,8 +139,12 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        DB::table("roles")->where('id',$id)->delete();
-        return redirect()->route('roles.index')
-                        ->with('success','Role deleted successfully');
+       $delete =  DB::table("roles")->where('id',$id)->delete();
+       if($delete) {
+            Alert::success('Selesai !', 'Role Berhasil Dihapus!');
+            return redirect()->route('roles.index');
+            // return redirect()->route('roles.index')
+            // ->with('success','Role deleted successfully');
+       }
     }
 }

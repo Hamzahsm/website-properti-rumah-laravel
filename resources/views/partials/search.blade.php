@@ -17,15 +17,15 @@
 		<div class="tab-content" id="pills-tabContent">
 			<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 				<div class="search-bar"> 
-					<form class="search-form d-flex align-items-center" method="get" action="{{ route('cari.properti') }}">
+					<form class="search-form d-flex align-items-center" method="get" action="{{ route('cari.properti.dijual') }}">
 					<input type="text" name="keyword" placeholder="Dijual, judul properti, lokasi" title="Dijual, judul properti, lokasi" class="form-control">
 					<button type="submit" title="Search" class="btn bordered"><i class="fa fa-search" aria-hidden="true"></i></button>
-					</form>
+					</form> 
 				</div> 
 			</div>
 			<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 				<div class="search-bar"> 
-					<form class="search-form d-flex align-items-center" method="get" action="{{ route('cari.iklan.premium') }}">
+					<form class="search-form d-flex align-items-center" method="get" action="{{ route('cari.properti.disewakan') }}">
 					<input type="text" name="keyword" placeholder="Disewakan, judul properti, lokasi" title="Disewakan, judul properti, lokasi" class="form-control">
 					<button type="submit" title="Search" class="btn bordered"><i class="fa fa-search" aria-hidden="true"></i></button>
 					</form>

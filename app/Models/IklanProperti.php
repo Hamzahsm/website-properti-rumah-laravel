@@ -18,6 +18,15 @@ class IklanProperti extends Model
 
     /**
      * 
+     * Array detail_foto_properti
+     * 
+     */
+    protected $casts = [
+        'detail_foto_properti' => 'array'
+    ];
+
+    /**
+     * 
      * fitur search 
      * 
      */

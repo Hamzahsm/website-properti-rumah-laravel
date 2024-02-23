@@ -35,6 +35,7 @@ class StoreRequest extends FormRequest
             'harga_end_properti' => 'required|string',
             'deskripsi_properti' => 'required|string|min:3|max:6000',
             'featured_image' => 'required|image|max:1024|mimes:jpg,jpeg,png',
+            'detail_foto_properti' => 'required|array',
             'foto_perusahaan_properti' => 'required|image|max:1024|mimes:jpg,jpeg,png',
         ];
     }

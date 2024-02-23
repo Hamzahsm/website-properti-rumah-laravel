@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
                 <label for="judul_properti" class="form-label">Judul Properti</label>
-                <input type="text" name="judul_properti" class="form-control" value="{{ $ads->judul_properti }}">
+                <input type="text" name="judul_properti" class="form-control" value="{{ $ads->judul_properti }}"> 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
@@ -71,13 +71,21 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
                 <label for="deskripsi_properti" class="form-label">Deskripsi Properti</label>
-                <textarea name="deskripsi_properti" id="" cols="30" rows="10" class="form-control">{{ $ads->deskripsi_properti }}</textarea>
+                <textarea name="deskripsi_properti" id="editor" cols="30" rows="10" class="form-control">{{ $ads->deskripsi_properti }}</textarea>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
                 <label for="featured_image" class="form-label">Gambar Properti</label>
                 <img src="{{ Storage::url($ads->featured_image) }}" alt="" widht="150" height="150">
                 <input type="file" class="form-control" name="featured_image">
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 mb-3">
+                <label for="detail_foto_properti" class="form-label">Detail Foto Properti</label>
+                @foreach ($ads->detail_foto_properti as $item)
+                <img src="{{ asset('/storage/') . '/' . $item }}" alt="mutliple-image" width="100" height="100">
+                @endforeach
+                <input type="file" name="detail_foto_properti[]" class="form-control" id="detail_foto_properti" multiple="multiple">
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 mb-3">

@@ -15,44 +15,56 @@
         </div>
     @endif
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Foto Properti</th>
-                <th>Judul Properti</th>
-                <th>Nomor Telepon</th>
-                <th>Lokasi Properti</th>
-                <th>Provinsi Properti</th>
-                <th>Luas Bangunan </th>
-                <th>Luas Tanah</th>
-                <th>Jumlah Kamar Tidur</th>
-                <th>Jumlah Kamar Mandi</th>
-                <th>Harga Rendah</th>
-                <th>Harga Tinggi</th>
-                <th>Deskripsi</th>
-                <th>Nama Agen</th>
-                <th>Foto Perusahaan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="{{ Storage::url($ads->featured_image) }}" alt="" widht="150" height="150"></td>
-                <td>{{ $ads->judul_properti }}</td>
-                <td>{{ $ads->nomor_telepon_properti }}</td>
-                <td>{{ $ads->lokasi_properti }}</td>
-                <td>{{ $ads->provinsi_properti }}</td>
-                <td>{{ $ads->luas_bangunan_properti }}</td>
-                <td>{{ $ads->luas_tanah_properti }}</td>
-                <td>{{ $ads->kamar_tidur_properti }}</td>
-                <td>{{ $ads->kamar_mandi_properti }}</td>
-                <td>{{ $ads->harga_start_properti }}</td>
-                <td>{{ $ads->harga_end_properti }}</td>
-                <td>{{ $ads->deskripsi_properti }}</td>
-                <td>{{ $ads->user->name }}</td>
-                <td><img src="{{ Storage::url($ads->foto_perusahaan_properti) }}" alt=""></td>
-            </tr> 
-        </tbody>
-    </table>
+    <div class="row">
+        <!-- left column, just image -->
+        <div class="col-lg-6">
+            <div class="border p-3 rounded mb-3 bg-white">
+                <h5 class="font-weight-bold mb-3"><i class="bi bi-image"></i> Banner</h5>
+                <a href="{{ Storage::url($ads->featured_image) }}">
+                    <img src="{{ Storage::url($ads->featured_image) }}" alt="" class="img-fluid rounded">
+                </a>
+            </div>
+            <div class="border p-3 rounded mb-3 bg-white">
+                <h5 class="font-weight-bold mb-3"><i class="bi bi-image"></i> Detail Foto</h5>
+                @foreach ($ads->detail_foto_properti as $item)
+                <a href="{{ asset('/storage/') . '/' . $item }}">
+                    <img src="{{ asset('/storage/') . '/' . $item }}" alt="mutliple-image" class="img-fluid rounded" width="150" height="150">
+                </a>
+                @endforeach
+            </div>
+            <div class="border rounded mb-3 bg-white p-3">
+                <h5 class="font-weight-bold mb-3"><i class="bi bi-image"></i> Foto Perusahaan</h5>
+                <img src="{{ Storage::url($ads->foto_perusahaan_properti) }}" alt="" class="img-fluid">
+            </div>
+        </div> 
+
+        <!-- right column, just data -->
+        <div class="col-lg-6">
+            <div class="border p-3 rounded mb-3">
+                <h5 class="mb-3 font-weight-bold"><i class="bi bi-card-list"></i> Judul Iklan</h5>
+                <p>{{ $ads->judul_properti }}</p>
+            </div>
+            <div class="border p-3 rounded mb-3">
+                <h5 class="mb-3 font-weight-bold"><i class="bi bi-card-list"></i> Penjual</h5>
+                <p>Nama : {{ $ads->user->name }}</p>
+                <p>Telepon : {{ $ads->nomor_telepon_properti }}</p>
+            </div>
+            <div class="border p-3 rounded mb-3">
+                <h5 class="mb-3 font-weight-bold"><i class="bi bi-card-list"></i> Detail</h5>
+                <p>Lokasi : {{ $ads->lokasi_properti }} - {{ $ads->provinsi_properti }} </p>
+                <p>Luas Bangunan : {{ $ads->luas_bangunan_properti }}</p>
+                <p>Luas Tanah : {{ $ads->luas_tanah_properti }}</p>
+                <p>Kamar Tidur : {{ $ads->kamar_tidur_properti }}</p>
+                <p>Kamar Mandi : {{ $ads->kamar_mandi_properti }}</p>
+                <p>Harga : {{ $ads->harga_start_properti }} - {{ $ads->harga_end_properti }}</p>
+                <p>Upload : {{ $ads->created_at }}</p>
+            </div>
+            <div class="border p-3 rounded mb-3">
+                <h5 class="mb-3 font-weight-bold"><i class="bi bi-card-list"></i> Deskripsi </h5>
+                <p>{!! $ads->deskripsi_properti !!}</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 @endsection

@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
-use Laravel\Scout\Searchable;
+use Spatie\Permission\Traits\HasRoles; //role & permission
+use Laravel\Scout\Searchable; //searchable featur
 use App\Models\IklanProperti; //db relation
-use App\Models\IklanPremium;
+use App\Models\IklanPremium; //db relation
+use App\Models\SellProperti; //db relation
+use App\Models\Post; //db relation
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -75,5 +77,13 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function iklanPremium(){
         return $this->hasMany(IklanPremium::class);
+    }
+
+    public function sellProperti() {
+        return $this->hasMany(SellProperti::class);
+    }
+
+    public function post() {
+        return $this->hasMany(Post::class);
     }
 }
