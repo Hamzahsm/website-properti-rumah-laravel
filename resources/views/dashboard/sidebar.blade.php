@@ -10,6 +10,7 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
+      @hasanyrole('Admin')
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>User</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -45,6 +46,7 @@
           </li>
         </ul>
       </li><!-- End role Nav -->
+      @endhasanyrole
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
