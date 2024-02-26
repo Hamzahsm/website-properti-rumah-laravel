@@ -69,11 +69,11 @@
                         </div>
                     </form>
                     {{-- button Oauth Google --}}
-                    <div class="text-center mt-3">
+                    {{-- <div class="text-center mt-3">
                         <a href="#">
                             <button type="button" class="btn btn-outline-primary btn-block"><i class="bi bi-google"></i> Google </button>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
