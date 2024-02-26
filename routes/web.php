@@ -56,9 +56,6 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('export-excel-properti-dijual', [ExportController::class, 'exportCsvPropertiDijual'])->name('export.csv.properti.dijual');
     Route::get('export-excel-panduan-artikel', [ExportController::class, 'exportCsvPanduanArtikel'])->name('export.csv.panduan.artikel');
 
-    //test multiple 
-    Route::get('uploads-multiple', [PagesController::class, 'uploadsMultiple'])->name('upload.multiple.images');
-    Route::post('uploads-multiple', [PagesController::class, 'storeUploadMultiple'])->name('store.multiple.images');
 });
 
 Route::middleware(['guest'])->group(function () {

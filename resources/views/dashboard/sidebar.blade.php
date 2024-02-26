@@ -10,7 +10,7 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      @hasanyrole('Admin')
+      @hasanyrole('Admin|Super-admin')
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>User</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -103,19 +103,6 @@
         </ul>
       </li><!-- End iklan premium Nav -->
       @endhasanyrole
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#multiple_images" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Multiple Upload Image</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="multiple_images" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('upload.multiple.images') }}">
-              <i class="bi bi-circle"></i><span>Test Multiple Image</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- Multiple Upload -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#properti_dijual" data-bs-toggle="collapse" href="#">

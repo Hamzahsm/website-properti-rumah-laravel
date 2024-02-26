@@ -32,13 +32,13 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
-        $titleDelete = 'Hapus Iklan!';
+        $titleDelete = 'Hapus Role!';
         $textDelete = 'Apakah Anda Yakin ?';
         confirmDelete($titleDelete, $textDelete);
 
         $roles = Role::orderBy('id','DESC')->paginate(5);
-        return view('dashboard.manage-role-index',compact('roles'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        return view('dashboard.manage-role-index',compact('roles')); 
+
     }
     
     /**
@@ -68,8 +68,13 @@ class RoleController extends Controller
         $role = Role::create(['name' => $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
     
-        return redirect()->route('roles.index')
-                        ->with('success','Role created successfully');
+        if($role) {
+            Alert::success('Selesai !', 'Role Baru Berhasil Ditambah!');
+            return redirect()->route('roles.index');
+        }
+
+        return abort(500);
+
     }
     /**
      * Display the specified resource.
@@ -127,8 +132,6 @@ class RoleController extends Controller
         if($role) {
             Alert::success('Selesai !', 'Role Berhasil Diperbarui!');
             return redirect()->route('roles.index');
-            // return redirect()->route('roles.index')
-            //                 ->with('success','Role updated successfully');
         }
     }
     /**
@@ -143,8 +146,6 @@ class RoleController extends Controller
        if($delete) {
             Alert::success('Selesai !', 'Role Berhasil Dihapus!');
             return redirect()->route('roles.index');
-            // return redirect()->route('roles.index')
-            // ->with('success','Role deleted successfully');
        }
     }
 }

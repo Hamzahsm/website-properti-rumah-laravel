@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
+use Alert; //sweet alert 
     
 class UserController extends Controller
 {
@@ -17,11 +18,30 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+         $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:user-create', ['only' => ['create','store']]);
+         $this->middleware('permission:user-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
+        $titleDelete = 'Hapus User!';
+        $textDelete = 'Apakah Anda Yakin ?';
+        confirmDelete($titleDelete, $textDelete);
+
         $data = User::orderBy('id','DESC')->paginate(5);
-        return view('dashboard.manage-user-index',compact('data'))
-            ->with('i', ($request->input('page', 1) - 1) * 5); 
+        return view('dashboard.manage-user-index',compact('data')); 
+
+        // return view('dashboard.manage-user-index',compact('data'))
+        //     ->with('i', ($request->input('page', 1) - 1) * 5); 
     }
     
     /**
@@ -55,9 +75,16 @@ class UserController extends Controller
     
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
+
+        if($user) {
+            Alert::success('Selesai !', 'Role Baru Berhasil Ditambah!');
+            return redirect()->route('users.index');
+        }
+
+        return abort(500);
     
-        return redirect()->route('users.index')
-                        ->with('success','User created successfully');
+        // return redirect()->route('users.index')
+        //                 ->with('success','User created successfully');
     }
     
     /**
@@ -116,8 +143,13 @@ class UserController extends Controller
     
         $user->assignRole($request->input('roles'));
     
-        return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+        if($user) {
+            Alert::success('Selesai !', 'Role Berhasil Diperbarui!');
+            return redirect()->route('users.index');
+        }
+        // return redirect()->route('users.index')
+        //                 ->with('success','User updated successfully');
+        return abort(500);
     }
     
     /**
@@ -128,8 +160,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::find($id)->delete();
-        return redirect()->route('users.index')
-                        ->with('success','User deleted successfully');
+        $delete = User::find($id)->delete();
+        if($delete) {
+            Alert::success('Selesai !', 'Role Berhasil Dihapus!');
+            return redirect()->route('users.index');
+        }
+
+        // User::find($id)->delete();
+        // return redirect()->route('users.index')
+        //                 ->with('success','User deleted successfully');
     }
 }

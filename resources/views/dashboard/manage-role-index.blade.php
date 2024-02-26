@@ -39,6 +39,7 @@
     </table>
     
     {{-- {!! $roles->render() !!} --}}
+    {{ $roles->links() }}
 
 </section>
 

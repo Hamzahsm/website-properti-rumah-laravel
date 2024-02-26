@@ -63,42 +63,6 @@ class PagesController extends Controller
 
     /**
      * 
-     * uploads multiple images 
-     * 
-     */
-    public function uploadsMultiple()
-    {
-        $images = Image::all();
-        return view('dashboard.multiple-image-upload', compact('images'));
-    }
-
-    public function storeUploadMultiple(Request $request)
-    {
-        // return dd($request);
-        $data = $request->validate([
-            'name' => 'required|string|max:255',
-            'images' => 'required|array'
-        ]);
-
-        $images = [];
-
-        foreach($data['images'] as $image) {
-            $username = $request->input('name');
-            $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
-            $image_path = $image->storeAs('images/' . $username , $fileName , 'public');
-            // $image_path = $image->storeAs('images' , $fileName , 'public');
-
-            array_push($images, $image_path);
-        }
-
-        $data['images'] = $images;
-
-        Image::create($data);
-        return redirect()->route('upload.multiple.images')->with('success', 'gambar berhasil di upload!');
-    }
-
-    /**
-     * 
      * test joining db search
      * 
      */
